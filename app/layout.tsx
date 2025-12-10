@@ -13,7 +13,13 @@ export const metadata: Metadata = {
   title: "Novantys Solutions | Assurance & Financement",
   description: "Votre partenaire confiance en assurance et financement. Accompagnement personnalisé pour particuliers et professionnels.",
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/assets/images/logo-dor-removebg-preview.png" },
+      { url: "/assets/images/logo-dor-removebg-preview.png", type: "image/png" },
+      { url: "/assets/images/logo-noir-removebg-preview.png", type: "image/png" },
+    ],
+    shortcut: ["/assets/images/logo-dor-removebg-preview.png"],
+    apple: ["/assets/images/logo-dor-removebg-preview.png"],
   },
 };
 

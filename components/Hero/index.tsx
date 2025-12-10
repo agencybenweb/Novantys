@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { 
   Sparkles, 
   Shield, 
@@ -24,6 +24,27 @@ const Hero = () => {
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
+  // Deterministic particles to avoid hydration mismatch
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 30 }).map((_, i) => {
+        const left = (i * 37) % 100;
+        const top = (i * 53) % 100;
+        const size = 2 + ((i * 3) % 4);
+        const xShift = ((i * 7) % 20) - 10;
+        const delay = (i % 5) * 0.6;
+        const duration = 4 + (i % 4);
+        const color =
+          i % 3 === 0
+            ? "rgba(212, 175, 55, 0.3)"
+            : i % 3 === 1
+            ? "rgba(255, 192, 203, 0.3)"
+            : "rgba(147, 51, 234, 0.3)";
+        return { left, top, size, xShift, delay, duration, color, id: i };
+      }),
+    []
+  );
 
   return (
     <>
@@ -53,32 +74,28 @@ const Hero = () => {
             />
           </div>
           
-          {/* Floating Elegant Particles */}
-          {[...Array(30)].map((_, i) => (
+          {/* Floating Elegant Particles (deterministic) */}
+          {particles.map((p) => (
             <motion.div
-              key={i}
+              key={p.id}
               className="absolute rounded-full"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                width: `${2 + Math.random() * 4}px`,
-                height: `${2 + Math.random() * 4}px`,
-                background: i % 3 === 0 
-                  ? 'rgba(212, 175, 55, 0.3)'
-                  : i % 3 === 1 
-                  ? 'rgba(255, 192, 203, 0.3)'
-                  : 'rgba(147, 51, 234, 0.3)',
+                left: `${p.left}%`,
+                top: `${p.top}%`,
+                width: `${p.size}px`,
+                height: `${p.size}px`,
+                background: p.color,
               }}
               animate={{
                 y: [0, -40, 0],
-                x: [0, Math.random() * 20 - 10, 0],
+                x: [0, p.xShift, 0],
                 opacity: [0.2, 0.6, 0.2],
                 scale: [1, 1.5, 1],
               }}
               transition={{
-                duration: 4 + Math.random() * 4,
+                duration: p.duration,
                 repeat: Infinity,
-                delay: Math.random() * 3,
+                delay: p.delay,
                 ease: "easeInOut",
               }}
             />
@@ -287,7 +304,7 @@ const Hero = () => {
                         25+
                       </motion.h1>
                       <p className="text-xs font-bold uppercase tracking-wider text-black dark:text-white">Années</p>
-                      <p className="text-xs font-medium text-waterloo">d'Excellence</p>
+                      <p className="text-xs font-medium text-waterloo">d&apos;Excellence</p>
                     </motion.div>
                   </motion.div>
 
