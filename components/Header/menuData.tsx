@@ -44,6 +44,12 @@ const menuData: Menu[] = [
     newTab: false,
     submenu: [
       {
+        id: 40,
+        title: "Accompagnement stratégique",
+        path: "/accompagnement-strategique",
+        newTab: false,
+      },
+      {
         id: 41,
         title: "Assurance & Prévoyance TNS",
         path: "/travailleurs-non-salaries",

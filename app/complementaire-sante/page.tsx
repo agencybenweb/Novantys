@@ -487,7 +487,7 @@ export default function ComplementaireSante() {
                       name="telDomicile"
                       value={formData.telDomicile}
                       onChange={handleInputChange}
-                      placeholder="01 23 45 67 89"
+                      placeholder="06 37 76 41 90"
                       className="w-full rounded-xl border-2 border-stroke bg-white px-5 py-4 text-black transition-all placeholder:text-waterloo/50 hover:border-primary/30 focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10 dark:border-strokedark dark:bg-blacksection dark:text-white dark:placeholder:text-manatee/50"
                     />
                   </div>

@@ -134,7 +134,7 @@ export default function AboutPage() {
                       Appelez-nous
                     </h5>
                     <p className="text-base font-medium text-primary">
-                      +33 1 23 45 67 89
+                      +33 6 37 76 41 90
                     </p>
                   </div>
                 </div>

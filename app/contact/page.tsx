@@ -86,7 +86,7 @@ export default function ContactPage() {
                     Notre Conseiller
                   </h5>
                   <p className="text-base font-bold text-primary">
-                    +33 1 23 45 67 89
+                    +33 6 37 76 41 90
                   </p>
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function ContactPage() {
                 {[
                   {
                     icon: "fas fa-map-marker-alt",
-                    text: "123 Avenue des Champs-Élysées, 75008 Paris",
+                    text: "31 rue Bistanclaque, 38110 Cessieu",
                   },
                   {
                     icon: "fas fa-envelope",

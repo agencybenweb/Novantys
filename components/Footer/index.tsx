@@ -80,14 +80,14 @@ const Footer = () => {
                   </motion.a>
 
                   <motion.a
-                    href="tel:+33123456789"
+                    href="tel:+33637764190"
                     whileHover={{ x: 5 }}
                     className="flex items-center gap-3 text-black transition-colors hover:text-primary dark:text-white"
                   >
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
-                    <span className="font-medium">01 23 45 67 89</span>
+                    <span className="font-medium">06 37 76 41 90</span>
                   </motion.a>
 
                   <motion.div
@@ -97,7 +97,7 @@ const Footer = () => {
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
                       <MapPin className="h-5 w-5 text-primary" />
                     </div>
-                    <span className="font-medium">Paris, France</span>
+                    <span className="font-medium">31 rue Bistanclaque, 38110 Cessieu</span>
                   </motion.div>
                 </div>
               </motion.div>
@@ -286,7 +286,7 @@ const Footer = () => {
                   &copy; {new Date().getFullYear()} Novantys Solutions. Fait avec
                 </p>
                 <Heart className="h-4 w-4 fill-primary text-primary" />
-                <p>à Paris</p>
+                <p>à Cessieu</p>
               </motion.div>
 
               {/* Social Media */}
