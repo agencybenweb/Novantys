@@ -100,9 +100,10 @@ export default function RCProPage() {
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type } = e.target;
     if (type === "checkbox") {
-      setFormData((prev) => ({ ...prev, [name]: checked }));
+      const target = e.target as HTMLInputElement;
+      setFormData((prev) => ({ ...prev, [name]: target.checked }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
