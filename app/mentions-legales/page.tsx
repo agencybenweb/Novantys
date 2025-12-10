@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FileText, Building2, MapPin, Phone, Mail, Scale } from "lucide-react";
+import { FileText, Building2, Phone, Mail, Scale } from "lucide-react";
 import Link from "next/link";
 
 export default function MentionsLegalesPage() {
@@ -11,27 +11,35 @@ export default function MentionsLegalesPage() {
       content: [
         {
           label: "Raison sociale",
-          value: "Novantis Solutions",
+          value: "NOVANTYS SOLUTION",
         },
         {
           label: "Forme juridique",
-          value: "Société de courtage en assurance",
+          value: "Société à responsabilité limitée (sans autre indication)",
         },
         {
           label: "Siège social",
-          value: "31 rue Bistanclaque, 38110 Cessieu, France",
+          value: "31 RUE BISTANCLAQUE, 38110 CESSIEU, France",
         },
         {
-          label: "SIRET",
-          value: "À compléter",
+          label: "SIREN",
+          value: "989 017 223",
         },
         {
-          label: "RCS",
-          value: "À compléter",
+          label: "SIRET du siège social",
+          value: "989 017 223 00011",
         },
         {
           label: "TVA Intracommunautaire",
-          value: "À compléter",
+          value: "FR64 989 017 223",
+        },
+        {
+          label: "Code NAF/APE",
+          value: "66.22Z",
+        },
+        {
+          label: "Activité principale",
+          value: "Activités des agents et courtiers d&apos;assurances",
         },
       ],
     },
@@ -95,7 +103,7 @@ export default function MentionsLegalesPage() {
             Mentions Légales
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-waterloo dark:text-manatee">
-            Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique
+            Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l&apos;économie numérique
           </p>
         </motion.div>
 
@@ -138,10 +146,10 @@ export default function MentionsLegalesPage() {
             viewport={{ once: true }}
             className="rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
           >
-            <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">Hébergement</h2>
+            <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">Hébergement et Prestation Web</h2>
             <div className="space-y-4 text-waterloo dark:text-manatee">
               <p>
-                Le site est hébergé par un prestataire technique. Les informations concernant l'hébergement seront complétées lors de la mise en production.
+                Le site web a été réalisé et est hébergé par <strong className="text-black dark:text-white">My Atlantic Agency</strong>, prestataire technique.
               </p>
             </div>
           </motion.div>
@@ -157,10 +165,10 @@ export default function MentionsLegalesPage() {
             <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">Propriété Intellectuelle</h2>
             <div className="space-y-4 text-waterloo dark:text-manatee">
               <p>
-                L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.
+                L&apos;ensemble de ce site relève de la législation française et internationale sur le droit d&apos;auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.
               </p>
               <p>
-                La reproduction de tout ou partie de ce site sur un support électronique quel qu'il soit est formellement interdite sauf autorisation expresse de Novantis Solutions.
+                La reproduction de tout ou partie de ce site sur un support électronique quel qu&apos;il soit est formellement interdite sauf autorisation expresse de NOVANTYS SOLUTION.
               </p>
             </div>
           </motion.div>
@@ -176,16 +184,16 @@ export default function MentionsLegalesPage() {
             <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">Protection des Données Personnelles</h2>
             <div className="space-y-4 text-waterloo dark:text-manatee">
               <p>
-                Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.
+                Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d&apos;un droit d&apos;accès, de rectification, de suppression et d&apos;opposition aux données personnelles vous concernant.
               </p>
               <p>
-                Pour exercer ces droits, vous pouvez nous contacter à l'adresse :{" "}
+                Pour exercer ces droits, vous pouvez nous contacter à l&apos;adresse :{" "}
                 <a href="mailto:contact@novantys-solutions.fr" className="text-primary hover:underline">
                   contact@novantys-solutions.fr
                 </a>
               </p>
               <p>
-                Pour plus d'informations, consultez notre{" "}
+                Pour plus d&apos;informations, consultez notre{" "}
                 <Link href="/politique-confidentialite" className="text-primary hover:underline">
                   Politique de Confidentialité
                 </Link>
@@ -205,7 +213,7 @@ export default function MentionsLegalesPage() {
             <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">Cookies</h2>
             <div className="space-y-4 text-waterloo dark:text-manatee">
               <p>
-                Ce site utilise des cookies pour améliorer l'expérience utilisateur. En continuant à naviguer sur ce site, vous acceptez l'utilisation de cookies conformément à notre politique de confidentialité.
+                Ce site utilise des cookies pour améliorer l&apos;expérience utilisateur. En continuant à naviguer sur ce site, vous acceptez l&apos;utilisation de cookies conformément à notre politique de confidentialité.
               </p>
             </div>
           </motion.div>
@@ -221,10 +229,10 @@ export default function MentionsLegalesPage() {
             <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">Limitation de Responsabilité</h2>
             <div className="space-y-4 text-waterloo dark:text-manatee">
               <p>
-                Novantis Solutions s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur ce site, dont elle se réserve le droit de corriger, à tout moment et sans préavis, le contenu.
+                NOVANTYS SOLUTION s&apos;efforce d&apos;assurer l&apos;exactitude et la mise à jour des informations diffusées sur ce site, dont elle se réserve le droit de corriger, à tout moment et sans préavis, le contenu.
               </p>
               <p>
-                Toutefois, Novantis Solutions ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à disposition sur ce site. En conséquence, Novantis Solutions décline toute responsabilité pour tout dommage résultant d'une intrusion d'un tiers ayant entraîné une modification des informations mises à disposition sur le site.
+                Toutefois, NOVANTYS SOLUTION ne peut garantir l&apos;exactitude, la précision ou l&apos;exhaustivité des informations mises à disposition sur ce site. En conséquence, NOVANTYS SOLUTION décline toute responsabilité pour tout dommage résultant d&apos;une intrusion d&apos;un tiers ayant entraîné une modification des informations mises à disposition sur le site.
               </p>
             </div>
           </motion.div>

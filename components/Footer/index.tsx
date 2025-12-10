@@ -240,20 +240,20 @@ const Footer = () => {
                       </Link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        href="/mentions-legales"
                         className="mb-3 inline-block hover:text-primary"
                       >
                         Mentions Légales
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        href="/politique-confidentialite"
                         className="mb-3 inline-block hover:text-primary"
                       >
                         Politique de Confidentialité
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </motion.div>
@@ -352,19 +352,19 @@ const Footer = () => {
                 className="animate_top flex gap-6 text-sm"
               >
                 <Link
-                  href="#"
+                  href="/mentions-legales"
                   className="text-waterloo transition-colors hover:text-primary dark:text-manatee"
                 >
                   Mentions Légales
                 </Link>
                 <Link
-                  href="#"
+                  href="/politique-confidentialite"
                   className="text-waterloo transition-colors hover:text-primary dark:text-manatee"
                 >
                   Confidentialité
                 </Link>
                 <Link
-                  href="#"
+                  href="/cgv"
                   className="text-waterloo transition-colors hover:text-primary dark:text-manatee"
                 >
                   CGV
