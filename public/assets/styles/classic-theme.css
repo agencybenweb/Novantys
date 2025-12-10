@@ -1,0 +1,266 @@
+/* Classic Blue & White Theme */
+.classic-theme {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --accent-color: #0056b3;
+  --text-light: #ffffff;
+  --text-dark: #212529;
+  --text-muted: #6c757d;
+  --bg-dark: #f8f9fa;
+  --bg-light: #ffffff;
+  --border-color: #dee2e6;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+}
+
+/* Classic Theme Body */
+.classic-theme {
+  background-color: #f8f9fa !important;
+  color: #212529 !important;
+}
+
+/* Classic Theme Overrides */
+.classic-theme .navbar {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #dee2e6;
+}
+
+.classic-theme .luxury-brand h1 {
+  color: var(--primary-color) !important;
+  text-shadow: none !important;
+}
+
+.classic-theme .luxury-nav-link {
+  color: #495057 !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.classic-theme .luxury-nav-link:hover,
+.classic-theme .luxury-nav-link.active {
+  color: var(--primary-color) !important;
+  transform: none !important;
+}
+
+.classic-theme .luxury-dropdown .dropdown-menu {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border: 1px solid #dee2e6 !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.classic-theme .luxury-dropdown-item {
+  color: #495057 !important;
+  background: transparent !important;
+}
+
+.classic-theme .luxury-dropdown-item:hover {
+  color: var(--primary-color) !important;
+  background: rgba(0, 123, 255, 0.1) !important;
+  transform: none !important;
+}
+
+.classic-theme .luxury-dropdown-item span {
+  color: inherit !important;
+}
+
+.classic-theme .luxury-dropdown-item:hover span {
+  color: var(--primary-color) !important;
+}
+
+.classic-theme .luxury-dropdown-item i {
+  color: var(--primary-color) !important;
+}
+
+.classic-theme .luxury-dropdown-item:hover i {
+  color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.classic-theme .hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.classic-theme .luxury-text {
+  color: var(--text-light) !important;
+}
+
+.classic-theme .gold-accent {
+  color: var(--primary-color) !important;
+}
+
+/* Cards */
+.classic-theme .luxury-card {
+  background: var(--bg-light) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.classic-theme .bg-light {
+  background-color: var(--bg-light) !important;
+}
+
+.classic-theme .bg-dark {
+  background-color: var(--bg-dark) !important;
+}
+
+.classic-theme .text-light {
+  color: var(--text-dark) !important;
+}
+
+.classic-theme .text-white {
+  color: var(--text-dark) !important;
+}
+
+.classic-theme .text-dark {
+  color: var(--text-dark) !important;
+}
+
+.classic-theme .text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Buttons */
+.classic-theme .btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--text-light) !important;
+}
+
+.classic-theme .btn-primary:hover {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: var(--text-light) !important;
+}
+
+.classic-theme .hero-cta-btn {
+  color: var(--text-light) !important;
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.classic-theme .hero-cta-btn:hover {
+  color: var(--text-light) !important;
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
+/* Gradients */
+.classic-theme .gold-gradient {
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color)) !important;
+}
+
+.classic-theme .luxury-gradient {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color)) !important;
+}
+
+/* Icons */
+.classic-theme .text-warning {
+  color: var(--primary-color) !important;
+}
+
+/* Sections */
+.classic-theme .container-xxl,
+.classic-theme .py-5,
+.classic-theme .py-4,
+.classic-theme .py-3 {
+  background-color: transparent !important;
+}
+
+.classic-theme .bg-white {
+  background-color: var(--bg-light) !important;
+}
+
+/* Footer */
+.classic-theme .footer {
+  background-color: #343a40 !important;
+}
+
+.classic-theme .footer .text-light {
+  color: var(--text-light) !important;
+}
+
+/* Chatbot */
+.classic-theme .chatbot-button {
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color)) !important;
+}
+
+.classic-theme .modal-content {
+  background-color: var(--bg-light) !important;
+  color: var(--text-dark) !important;
+}
+
+.classic-theme .modal-header {
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color)) !important;
+}
+
+/* Remove luxury effects in classic theme */
+.classic-theme .luxury-glow,
+.classic-theme .luxury-shadow,
+.classic-theme .shadow-gold {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.classic-theme .luxury-glow:hover,
+.classic-theme .luxury-shadow:hover {
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Disable animations in classic theme */
+.classic-theme * {
+  animation: none !important;
+}
+
+.classic-theme .luxury-nav-link:hover {
+  transform: none !important;
+}
+
+.classic-theme .luxury-dropdown-item:hover {
+  transform: none !important;
+}
+
+/* Form Controls */
+.classic-theme .form-control {
+  background-color: var(--bg-light) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-dark) !important;
+}
+
+.classic-theme .form-control:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+/* Mission and Services sections */
+.classic-theme .mission-point,
+.classic-theme .service-item,
+.classic-theme .feature-item {
+  background: var(--bg-light) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* Testimonials */
+.classic-theme .testimonial-item {
+  background: var(--bg-light) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* Contact page specific */
+.classic-theme .contact-page {
+  background-color: var(--bg-dark) !important;
+  min-height: 100vh !important;
+}
+
+.classic-theme .contact-page .container-fluid {
+  background-color: var(--bg-dark) !important;
+}
+
+/* Override any remaining dark backgrounds */
+.classic-theme .container-fluid.bg-dark {
+  background-color: var(--bg-dark) !important;
+}
+
+.classic-theme .py-5.bg-dark {
+  background-color: var(--bg-dark) !important;
+}

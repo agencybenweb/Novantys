@@ -1,0 +1,694 @@
+/* Luxury Theme Variables (Default) */
+
+.luxury-theme,
+:root {
+  /* Couleurs principales */
+  --primary-color: #ffeb3b; /* Jaune éclatant */
+  --secondary-color: #000000; /* Noir */
+  --accent-color: #f7e558; /* Jaune ambré */
+  --text-light: #FFFFFF; /* Blanc */
+  --text-dark: #000000; /* Noir */
+  --text-muted: #CCCCCC; /* Gris clair */
+  --bg-dark: #1a1a1a; /* Noir foncé */
+  --bg-light: #2a2a2a; /* Gris très foncé */
+  --border-color: #333333; /* Gris foncé */
+}
+
+/* Override Bootstrap primary colors */
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--text-dark) !important;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: var(--text-dark) !important;
+}
+
+/* Backgrounds */
+.bg-primary {
+  background-color: var(--primary-color) !important;
+  color: var(--text-dark) !important;
+}
+
+.bg-light {
+  background-color: var(--bg-light) !important;
+  color: var(--text-light) !important;
+}
+
+.bg-white {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-light) !important;
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-white {
+  color: var(--text-light) !important;
+}
+
+/* Cards and containers */
+.card {
+  background-color: var(--bg-light) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-light) !important;
+}
+
+/* Navbar */
+.navbar-light {
+  background-color: var(--bg-dark) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+  color: var(--text-light) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--primary-color) !important;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  background-color: var(--bg-light) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dropdown-item {
+  color: var(--text-light) !important;
+}
+
+.dropdown-item:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--text-dark) !important;
+}
+
+/* Forms */
+.form-control {
+  background-color: var(--bg-light) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-light) !important;
+}
+
+.form-control:focus {
+  background-color: var(--bg-light) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--text-light) !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25) !important;
+}
+
+.form-floating > label {
+  color: var(--text-muted) !important;
+}
+
+/* Hero section */
+.hero-section {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-light) 100%);
+  color: var(--text-light);
+}
+
+/* Service items */
+.service-item {
+  background-color: var(--bg-light) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-light) !important;
+}
+
+.service-item:hover {
+  border-color: var(--primary-color) !important;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-light) !important;
+}
+
+/* Custom gold accents */
+.gold-accent {
+  color: var(--primary-color) !important;
+}
+
+.gold-bg {
+  background-color: var(--primary-color) !important;
+  color: var(--text-dark) !important;
+}
+
+/* Shadows with yellow tint */
+.shadow-gold {
+  box-shadow: 0 0.5rem 1rem rgba(255, 235, 59, 0.15) !important;
+}
+
+/* Animations */
+@keyframes goldGlow {
+  0% { box-shadow: 0 0 5px var(--primary-color); }
+  50% { box-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--primary-color); }
+  100% { box-shadow: 0 0 5px var(--primary-color); }
+}
+
+.gold-glow {
+  animation: goldGlow 2s infinite;
+}
+
+/* Additional white background overrides */
+.container-xxl {
+  background-color: var(--bg-dark) !important;
+}
+
+.container {
+  background-color: transparent !important;
+}
+
+/* Specific section backgrounds */
+.py-5 {
+  background-color: var(--bg-dark) !important;
+}
+
+/* Form backgrounds */
+.bg-white {
+  background-color: var(--bg-light) !important;
+  color: var(--text-light) !important;
+}
+
+/* Testimonial cards */
+.testimonial-item {
+  background-color: var(--bg-light) !important;
+  color: var(--text-light) !important;
+}
+
+/* Feature cards */
+.feature-item {
+  background-color: var(--bg-light) !important;
+  color: var(--text-light) !important;
+}
+
+/* Service items */
+.service-item {
+  background-color: var(--bg-light) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-light) !important;
+}
+
+.service-item:hover {
+  border-color: var(--primary-color) !important;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* Luxury and elegant enhancements */
+.luxury-gradient {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-light) 100%);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+}
+
+.luxury-shadow {
+  box-shadow: 0 10px 30px rgba(255, 235, 59, 0.2), 0 0 0 1px rgba(255, 235, 59, 0.1) !important;
+}
+
+.luxury-card {
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.luxury-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 235, 59, 0.2);
+  border-color: var(--primary-color);
+}
+
+.luxury-text {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.elegant-border {
+  border: 2px solid transparent;
+  background: linear-gradient(var(--bg-light), var(--bg-light)) padding-box,
+              linear-gradient(135deg, var(--primary-color), var(--accent-color)) border-box;
+}
+
+/* Enhanced animations */
+@keyframes luxuryGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 235, 59, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(255, 235, 59, 0.6); }
+}
+
+.luxury-glow {
+  animation: luxuryGlow 3s ease-in-out infinite;
+}
+
+/* Fix remaining white spaces and improve contrast */
+/* Global body and html background */
+html, body {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-light) !important;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--bg-dark);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Fix blue icons and make them gold */
+img[src*="icon-04-primary.png"],
+img[src*="icon-03-primary.png"] {
+  filter: hue-rotate(45deg) saturate(2) brightness(1.2);
+}
+
+/* Improve text contrast */
+.text-muted {
+  color: var(--text-light) !important;
+  opacity: 0.8;
+}
+
+/* Fix any remaining white backgrounds */
+.bg-white,
+.white-bg {
+  background-color: var(--bg-light) !important;
+  color: var(--text-light) !important;
+}
+
+/* Fix profile images and avatars */
+img[src*="profile.jpg"],
+.rounded-circle {
+  border: 2px solid var(--primary-color) !important;
+}
+
+/* Fix any remaining light backgrounds */
+.bg-light-gray,
+.light-bg {
+  background-color: var(--bg-light) !important;
+  color: var(--text-light) !important;
+}
+
+/* Ensure all containers have dark backgrounds */
+.container-fluid,
+.container-xxl,
+.container {
+  background-color: var(--bg-dark) !important;
+}
+
+/* Fix About section specifically */
+.container-xxl.py-5 {
+  background-color: var(--bg-dark) !important;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+/* Fix any remaining white backgrounds in sections */
+section,
+.section {
+  background-color: var(--bg-dark) !important;
+}
+
+/* Fix row backgrounds */
+.row {
+  background-color: transparent !important;
+}
+
+/* Fix column backgrounds */
+.col-lg-6,
+.col-sm-6,
+.col {
+  background-color: transparent !important;
+}
+
+/* Fix any remaining white text areas */
+.text-white-bg {
+  background-color: var(--bg-light) !important;
+  color: var(--text-light) !important;
+}
+
+/* Additional white space fixes */
+.bg-white,
+.white-bg,
+.bg-light {
+  background-color: var(--bg-light) !important;
+  color: var(--text-light) !important;
+}
+
+/* Fix About section text colors */
+.container-xxl h1,
+.container-xxl h2,
+.container-xxl h5,
+.container-xxl p {
+  color: var(--text-light) !important;
+}
+
+/* Fix any remaining Bootstrap white backgrounds */
+.bg-body,
+.bg-body-tertiary {
+  background-color: var(--bg-dark) !important;
+}
+
+/* Ensure all main content areas are dark */
+main,
+.main-content {
+  background-color: var(--bg-dark) !important;
+}
+
+/* Fix any remaining white margins/padding */
+.py-5,
+.py-4,
+.py-3 {
+  background-color: var(--bg-dark) !important;
+}
+
+/* Hero section animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.hero-section {
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 235, 59, 0.03) 50%, transparent 70%);
+  animation: shimmer 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Hero CTA Button Styles */
+.hero-cta-btn {
+  color: var(--text-light) !important;
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.hero-cta-btn:hover {
+  color: var(--text-dark) !important;
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
+.hero-cta-btn i {
+  color: inherit !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  /* Reduce container padding on tablets */
+  .container-xxl,
+  .container-fluid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Adjust section padding */
+  .py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile Typography */
+  h1, .h1 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem) !important;
+  }
+  
+  h2, .h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem) !important;
+  }
+  
+  h3, .h3 {
+    font-size: clamp(1.25rem, 3.5vw, 1.75rem) !important;
+  }
+  
+  h4, .h4 {
+    font-size: clamp(1.1rem, 3vw, 1.5rem) !important;
+  }
+  
+  h5, .h5 {
+    font-size: clamp(1rem, 2.5vw, 1.25rem) !important;
+  }
+  
+  h6, .h6 {
+    font-size: clamp(0.9rem, 2vw, 1rem) !important;
+  }
+  
+  /* Mobile body text */
+  p, .fs-5 {
+    font-size: clamp(0.9rem, 2.5vw, 1rem) !important;
+  }
+  
+  /* Reduce padding on mobile */
+  .container-xxl,
+  .container-fluid {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  .py-5 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  
+  .py-4 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Card padding adjustments */
+  .luxury-card {
+    padding: 1.5rem !important;
+  }
+  
+  .luxury-card .p-5 {
+    padding: 1.5rem !important;
+  }
+  
+  .luxury-card .p-4 {
+    padding: 1.25rem !important;
+  }
+  
+  /* Button adjustments */
+  .btn {
+    font-size: clamp(0.85rem, 2vw, 1rem) !important;
+    padding: 0.5rem 1rem !important;
+  }
+  
+  .btn-lg {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem) !important;
+    padding: 0.6rem 1.25rem !important;
+  }
+  
+  /* Hero section mobile adjustments */
+  .hero-section {
+    min-height: auto !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Service items mobile spacing */
+  .service-item {
+    margin-bottom: 1rem !important;
+    padding: 1.25rem !important;
+  }
+  
+  /* Form elements mobile */
+  .form-control,
+  .form-select {
+    font-size: clamp(0.9rem, 2vw, 1rem) !important;
+    padding: 0.6rem 0.75rem !important;
+  }
+  
+  .form-floating > label {
+    font-size: clamp(0.85rem, 2vw, 1rem) !important;
+  }
+  
+  /* Mobile menu improvements */
+  .navbar-collapse {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  /* Image adjustments for mobile */
+  .rounded-4 {
+    border-radius: 1rem !important;
+  }
+  
+  /* Reduce gap on mobile */
+  .g-4, .gx-4, .gy-4 {
+    gap: 1rem !important;
+  }
+  
+  .g-5, .gx-5, .gy-5 {
+    gap: 1.5rem !important;
+  }
+  
+  /* Mobile icon sizes */
+  .fa-2x {
+    font-size: 1.5em !important;
+  }
+  
+  .fa-3x {
+    font-size: 2em !important;
+  }
+  
+  /* Testimonial adjustments */
+  .testimonial-item {
+    padding: 1.25rem !important;
+  }
+  
+  /* Feature card adjustments */
+  .feature-item {
+    padding: 1.25rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Extra small devices */
+  .container-xxl,
+  .container-fluid {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  
+  /* Further reduce section spacing */
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .mb-5, .my-5 {
+    margin-bottom: 2rem !important;
+  }
+  
+  .mb-4, .my-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Smaller cards on mobile */
+  .luxury-card {
+    padding: 1rem !important;
+    border-radius: 10px !important;
+  }
+  
+  .luxury-card .p-5,
+  .luxury-card .p-4 {
+    padding: 1rem !important;
+  }
+  
+  /* Stack CTA buttons vertically */
+  .hero-cta-enhanced {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+  }
+  
+  /* Mobile button sizing */
+  .btn {
+    padding: 0.5rem 0.75rem !important;
+  }
+  
+  /* Smaller icons on very small screens */
+  .rounded-circle {
+    width: clamp(50px, 15vw, 70px) !important;
+    height: clamp(50px, 15vw, 70px) !important;
+  }
+  
+  /* Adjust display text */
+  .display-4 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+  }
+  
+  .display-5 {
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+  }
+  
+  .display-6 {
+    font-size: clamp(1.25rem, 4vw, 1.75rem) !important;
+  }
+}
+
+/* Landscape orientation adjustments for phones */
+@media (max-width: 896px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger tap targets for touch devices */
+  .btn,
+  a.btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .luxury-nav-link {
+    padding: 1rem 1.25rem !important;
+  }
+  
+  /* Remove hover effects on touch devices */
+  .luxury-card:hover,
+  .service-item:hover,
+  .trust-indicator:hover {
+    transform: none !important;
+  }
+}

@@ -1,0 +1,272 @@
+"use client";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import { Sparkles, CheckCircle, Euro, Shield, Phone } from "lucide-react";
+
+const Partenaires = () => {
+  const partenaires = [
+    {
+      id: 1,
+      nom: "GENERALI",
+      url: "https://www.generali.fr/",
+      description: "Leader de l'assurance en Europe",
+      logo: "/assets/images/generali-logo.svg",
+      gradient: "from-red-400 to-orange-400"
+    },
+    {
+      id: 2,
+      nom: "SWISS LIFE",
+      url: "https://www.swisslife.fr/",
+      description: "Expert en assurance vie et prévoyance",
+      logo: "/assets/images/swisslife-svg.svg",
+      gradient: "from-blue-400 to-cyan-400"
+    },
+    {
+      id: 3,
+      nom: "MALAKOFF HUMANIS",
+      url: "https://www.malakoffhumanis.com/",
+      description: "Protection sociale et épargne retraite",
+      logo: "/assets/images/malaoff humanis.png",
+      gradient: "from-green-400 to-emerald-400"
+    },
+    {
+      id: 4,
+      nom: "ALLIANZ",
+      url: "https://www.allianz.fr/",
+      description: "Assureur mondial de référence",
+      logo: "/assets/images/allianz-logo.svg",
+      gradient: "from-blue-500 to-indigo-500"
+    },
+    {
+      id: 5,
+      nom: "PRO BTP",
+      url: "https://www.probtp.com/",
+      description: "Protection sociale du BTP",
+      logo: "/assets/images/probtp.png",
+      gradient: "from-yellow-400 to-orange-400"
+    },
+    {
+      id: 6,
+      nom: "SMATIS",
+      url: "https://www.smatis.fr/",
+      description: "Mutuelle santé et prévoyance",
+      logo: "/assets/images/smatiss.png",
+      gradient: "from-purple-400 to-pink-400"
+    },
+    {
+      id: 7,
+      nom: "EMPRUNTIS",
+      url: "https://www.empruntis.com/",
+      description: "Courtier en crédit immobilier",
+      logo: "/assets/images/empruntis-25.svg",
+      gradient: "from-primary to-amber-400"
+    },
+  ];
+
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-alabaster to-white py-20 dark:from-black dark:via-blacksection dark:to-black lg:py-25 xl:py-30">
+      {/* Decorative Background */}
+      <div className="absolute inset-0 -z-1">
+        <motion.div
+          className="absolute left-1/3 top-0 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-primary/10 via-pink-100/20 to-transparent blur-3xl"
+          animate={{
+            y: [0, 50, 0],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+      </div>
+
+      <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        {/* Section Title */}
+        <div className="animate_top mx-auto mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/10 via-pink-50/50 to-purple-50/50 px-4 py-2 backdrop-blur-sm"
+          >
+            <Sparkles className="h-4 w-4 text-primary" />
+            <span className="text-sm font-medium text-primary">Nos Partenaires</span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="mx-auto mb-4 text-3xl font-bold text-black dark:text-white md:w-4/5 xl:w-1/2 xl:text-sectiontitle3"
+          >
+            Des Partenaires{" "}
+            <span className="bg-gradient-to-r from-primary via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              d'Excellence
+            </span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mx-auto text-lg text-waterloo dark:text-manatee md:w-4/5 xl:w-1/2"
+          >
+            Nous collaborons avec les leaders de l'assurance pour vous garantir les meilleures solutions
+          </motion.p>
+        </div>
+
+        {/* Partners Marquee */}
+        <div className="relative mb-16 overflow-hidden">
+          <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent dark:from-black" />
+          <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent dark:from-black" />
+
+          <motion.div
+            initial={{ x: 0 }}
+            animate={{ x: "-50%" }}
+            transition={{ duration: 18, ease: "linear", repeat: Infinity }}
+            className="flex min-w-[200%] gap-6"
+          >
+            {[...partenaires, ...partenaires].map((partenaire, index) => (
+              <motion.div
+                key={`${partenaire.id}-${index}`}
+                whileHover={{ y: -8, scale: 1.03 }}
+                className="group w-[220px] shrink-0"
+              >
+                <a
+                  href={partenaire.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <div className="relative overflow-hidden rounded-2xl bg-white/80 p-5 shadow-lg ring-1 ring-black/5 backdrop-blur-sm transition-all hover:shadow-2xl dark:bg-blacksection/80 dark:ring-white/10">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${partenaire.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-5`} />
+                    
+                    <div className="relative mb-4 flex h-20 items-center justify-center">
+                      <div className="relative h-14 w-28">
+                        <Image
+                          src={partenaire.logo}
+                          alt={`Logo ${partenaire.nom}`}
+                          fill
+                          className="object-contain"
+                          sizes="112px"
+                          priority={index < partenaires.length}
+                        />
+                      </div>
+                    </div>
+
+                    <h5 className={`mb-1 text-center text-sm font-bold bg-gradient-to-r ${partenaire.gradient} bg-clip-text text-transparent`}>
+                      {partenaire.nom}
+                    </h5>
+                    <p className="text-center text-[11px] text-waterloo dark:text-manatee">
+                      {partenaire.description}
+                    </p>
+                  </div>
+                </a>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Benefits Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="animate_top mx-auto max-w-4xl"
+        >
+          <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-white/90 via-white/50 to-white/30 p-10 shadow-2xl ring-1 ring-black/5 backdrop-blur-xl dark:from-blacksection/90 dark:via-blacksection/50 dark:to-blacksection/30 dark:ring-white/10">
+            {/* Decorative Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-pink-50/30 to-purple-50/20 dark:from-primary/10 dark:via-pink-900/10 dark:to-purple-900/10" />
+            
+            <div className="relative">
+              <h3 className="mb-10 text-center text-2xl font-bold text-black dark:text-white">
+                Les Avantages de Nos{" "}
+                <span className="bg-gradient-to-r from-primary via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                  Partenariats
+                </span>
+              </h3>
+              
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+                {[
+                  {
+                    icon: CheckCircle,
+                    title: "Choix Élargi",
+                    description: "Accès à une large gamme de produits adaptés à tous les profils",
+                    gradient: "from-blue-400 to-cyan-400"
+                  },
+                  {
+                    icon: Euro,
+                    title: "Tarifs Négociés",
+                    description: "Conditions avantageuses grâce à nos volumes d'affaires",
+                    gradient: "from-emerald-400 to-teal-400"
+                  },
+                  {
+                    icon: Shield,
+                    title: "Sécurité Maximale",
+                    description: "Partenaires reconnus et régulés pour votre protection",
+                    gradient: "from-amber-400 to-orange-400"
+                  }
+                ].map((benefit, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="text-center"
+                  >
+                    <motion.div
+                      className={`mx-auto mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${benefit.gradient} shadow-lg`}
+                      whileHover={{ 
+                        scale: 1.1,
+                        rotate: [0, -10, 10, -10, 0],
+                        transition: { duration: 0.5 }
+                      }}
+                    >
+                      <benefit.icon className="h-8 w-8 text-white" strokeWidth={2} />
+                    </motion.div>
+                    <h5 className="mb-3 text-lg font-bold text-black dark:text-white">
+                      {benefit.title}
+                    </h5>
+                    <p className="text-sm leading-relaxed text-waterloo dark:text-manatee">
+                      {benefit.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="animate_top mt-16 text-center"
+        >
+          <h4 className="mb-6 text-2xl font-bold text-black dark:text-white">
+            Intéressé par nos solutions ?
+          </h4>
+          <motion.div
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-amber-500 px-8 py-4 font-semibold text-white shadow-lg transition-all hover:shadow-xl"
+            >
+              <Phone className="h-5 w-5" />
+              <span>Contactez-nous</span>
+            </Link>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Partenaires;
+
