@@ -41,16 +41,15 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-99999 w-full transition-all duration-300 ${
-        stickyMenu
-          ? "bg-white/80 py-4 shadow-lg backdrop-blur-xl ring-1 ring-black/5 dark:bg-black/80 dark:ring-white/10"
-          : "py-7"
-      }`}
+      className={`fixed left-0 top-0 z-99999 w-full transition-all duration-300 ${stickyMenu
+        ? "bg-beigeluxe/90 py-4 shadow-solid-5 backdrop-blur-xl border-b border-primary/20 dark:bg-black/90"
+        : "py-7 bg-transparent"
+        }`}
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
         <div className="flex w-full items-center justify-between xl:w-1/4">
           <Link href="/">
-            <motion.div 
+            <motion.div
               className="flex items-center gap-3"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
@@ -60,15 +59,7 @@ const Header = () => {
                 alt="Novantys Solutions Logo"
                 width={180}
                 height={60}
-                className="h-auto w-auto max-h-14 dark:hidden"
-                priority
-              />
-              <Image
-                src="/assets/images/logo-noir-removebg-preview.png"
-                alt="Novantys Solutions Logo"
-                width={180}
-                height={60}
-                className="hidden h-auto w-auto max-h-14 dark:block"
+                className="h-auto w-auto max-h-14"
                 priority
               />
             </motion.div>
@@ -83,31 +74,26 @@ const Header = () => {
             <span className="relative block h-5.5 w-5.5 cursor-pointer">
               <span className="absolute right-0 block h-full w-full">
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-0 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "w-full! delay-300" : "w-0"
-                  }`}
+                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-primary delay-0 duration-200 ease-in-out ${!navigationOpen ? "w-full! delay-300" : "w-0"
+                    }`}
                 ></span>
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "delay-400 w-full!" : "w-0"
-                  }`}
+                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-primary delay-150 duration-200 ease-in-out ${!navigationOpen ? "delay-400 w-full!" : "w-0"
+                    }`}
                 ></span>
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "w-full! delay-500" : "w-0"
-                  }`}
+                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-primary delay-200 duration-200 ease-in-out ${!navigationOpen ? "w-full! delay-500" : "w-0"
+                    }`}
                 ></span>
               </span>
               <span className="du-block absolute right-0 h-full w-full rotate-45">
                 <span
-                  className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "h-0! delay-0" : "h-full"
-                  }`}
+                  className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-primary delay-300 duration-200 ease-in-out ${!navigationOpen ? "h-0! delay-0" : "h-full"
+                    }`}
                 ></span>
                 <span
-                  className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "h-0! delay-200" : "h-0.5"
-                  }`}
+                  className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-primary duration-200 ease-in-out ${!navigationOpen ? "h-0! delay-200" : "h-0.5"
+                    }`}
                 ></span>
               </span>
             </span>
@@ -116,10 +102,9 @@ const Header = () => {
 
         {/* Nav Menu Start */}
         <div
-          className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${
-            navigationOpen &&
-            "navbar visible! mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
-          }`}
+          className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${navigationOpen &&
+            "navbar visible! mt-4 h-auto max-h-[400px] rounded-md bg-white border border-primary/20 p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:border-none xl:shadow-none xl:bg-transparent"
+            }`}
         >
           <nav>
             <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
@@ -129,7 +114,7 @@ const Header = () => {
                     <>
                       <button
                         onClick={() => setDropdownToggler(!dropdownToggler)}
-                        className="flex cursor-pointer items-center justify-between gap-3 hover:text-primary"
+                        className="flex cursor-pointer items-center justify-between gap-3 text-beigetext hover:text-primary dark:text-white"
                       >
                         {menuItem.title}
                         <span>
@@ -147,7 +132,7 @@ const Header = () => {
                         className={`dropdown ${dropdownToggler ? "flex" : ""}`}
                       >
                         {menuItem.submenu.map((item, key) => (
-                          <li key={key} className="hover:text-primary">
+                          <li key={key} className="text-beigetext hover:text-primary dark:text-white">
                             <Link href={item.path || "#"}>{item.title}</Link>
                           </li>
                         ))}
@@ -159,7 +144,7 @@ const Header = () => {
                       className={
                         pathUrl === menuItem.path
                           ? "text-primary hover:text-primary"
-                          : "hover:text-primary"
+                          : "text-beigetext hover:text-primary dark:text-white"
                       }
                     >
                       {menuItem.title}

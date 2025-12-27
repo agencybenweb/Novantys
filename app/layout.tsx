@@ -36,12 +36,16 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
       </head>
-      <body className={`dark:bg-black ${inter.className}`}>
+      <body className={`bg-beigeluxe text-beigetext transition-colors duration-300 dark:bg-black dark:text-manatee ${inter.className}`}>
         <Providers>
           <Lines />
           <Header />
           {children}
-          <Footer />
+          <div className="relative">
+            <div className="absolute bottom-0 left-0 h-[500px] w-[500px] translate-y-1/4 rounded-full bg-primary/20 blur-[120px]" />
+            <div className="absolute bottom-0 right-0 h-[500px] w-[500px] translate-y-1/4 rounded-full bg-purple-900/20 blur-[120px]" />
+            <Footer />
+          </div>
           <ScrollToTop />
         </Providers>
       </body>

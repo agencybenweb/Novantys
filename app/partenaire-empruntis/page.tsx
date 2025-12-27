@@ -1,32 +1,33 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Home, LineChart, Wrench, ShoppingCart, CheckCircle, ExternalLink, Phone, Sparkles } from "lucide-react";
 
 export default function PartenaireEmpruntisPage() {
   const services = [
     {
-      icon: "fas fa-home",
+      icon: Home,
       title: "Crédit Immobilier",
       description: "Financez votre projet d'achat immobilier aux meilleures conditions",
-      color: "#3498db"
+      color: "from-blue-400 to-cyan-400"
     },
     {
-      icon: "fas fa-chart-line",
+      icon: LineChart,
       title: "Rachat de Crédit",
       description: "Regroupez vos crédits et réduisez vos mensualités",
-      color: "#27ae60"
+      color: "from-emerald-400 to-teal-400"
     },
     {
-      icon: "fas fa-tools",
+      icon: Wrench,
       title: "Prêt Travaux",
       description: "Financez vos travaux de rénovation et d'amélioration",
-      color: "#f39c12"
+      color: "from-amber-400 to-orange-400"
     },
     {
-      icon: "fas fa-shopping-cart",
+      icon: ShoppingCart,
       title: "Crédit Consommation",
       description: "Pour tous vos projets personnels",
-      color: "#e74c3c"
+      color: "from-purple-400 to-pink-400"
     }
   ];
 
@@ -78,11 +79,11 @@ export default function PartenaireEmpruntisPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h1 className="mb-5 text-3xl font-bold text-black dark:text-white xl:text-hero">
+            <h1 className="mb-5 text-3xl font-bold text-white xl:text-hero">
               Partenaire{" "}
               <span className="text-primary">EMPRUNTIS</span>
             </h1>
-            <p className="mx-auto mb-10 max-w-3xl text-xl text-waterloo dark:text-manatee">
+            <p className="mx-auto mb-10 max-w-3xl text-xl text-manatee">
               Leader du courtage en crédit, EMPRUNTIS vous accompagne dans tous vos projets de financement
             </p>
           </motion.div>
@@ -90,7 +91,7 @@ export default function PartenaireEmpruntisPage() {
       </section>
 
       {/* Services Section */}
-      <section className="mb-20 bg-alabaster py-20 dark:bg-blacksection">
+      <section className="mb-20 bg-black py-20">
         <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
           <motion.h2
             variants={{
@@ -101,7 +102,7 @@ export default function PartenaireEmpruntisPage() {
             whileInView="visible"
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="mb-15 text-center text-3xl font-bold text-black dark:text-white"
+            className="mb-15 text-center text-3xl font-bold text-white"
           >
             Nos Services
           </motion.h2>
@@ -119,19 +120,16 @@ export default function PartenaireEmpruntisPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="rounded-lg border border-stroke bg-white p-7.5 shadow-solid-3 transition-all hover:-translate-y-2 hover:shadow-solid-7 dark:border-strokedark dark:bg-black">
+                <div className="rounded-lg border border-white/10 bg-blacksection p-7.5 shadow-solid-3 transition-all hover:-translate-y-2 hover:shadow-solid-7">
                   <div
-                    className="mb-5 flex h-16 w-16 items-center justify-center rounded-full"
-                    style={{
-                      background: `linear-gradient(135deg, ${service.color}, ${service.color}dd)`,
-                    }}
+                    className={`mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${service.color} shadow-lg`}
                   >
-                    <i className={`${service.icon} text-2xl text-white`}></i>
+                    <service.icon className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="mb-3 text-lg font-semibold text-black dark:text-white">
+                  <h3 className="mb-3 text-lg font-semibold text-white">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-waterloo dark:text-manatee">
+                  <p className="text-sm text-manatee">
                     {service.description}
                   </p>
                 </div>
@@ -153,7 +151,7 @@ export default function PartenaireEmpruntisPage() {
             whileInView="visible"
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="mb-15 text-center text-3xl font-bold text-black dark:text-white"
+            className="mb-15 text-center text-3xl font-bold text-white"
           >
             Pourquoi Choisir EMPRUNTIS ?
           </motion.h2>
@@ -170,10 +168,10 @@ export default function PartenaireEmpruntisPage() {
                 whileInView="visible"
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex items-center gap-4 rounded-lg border border-stroke bg-white p-5 dark:border-strokedark dark:bg-blacksection"
+                className="flex items-center gap-4 rounded-lg border border-white/10 bg-blacksection p-5"
               >
-                <i className="fas fa-check-circle text-2xl text-primary"></i>
-                <span className="text-base font-medium text-black dark:text-white">
+                <CheckCircle className="h-6 w-6 text-primary" />
+                <span className="text-base font-medium text-white">
                   {avantage}
                 </span>
               </motion.div>
@@ -183,7 +181,7 @@ export default function PartenaireEmpruntisPage() {
       </section>
 
       {/* Étapes Section */}
-      <section className="mb-20 bg-alabaster py-20 dark:bg-blacksection">
+      <section className="mb-20 bg-black py-20">
         <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
           <motion.h2
             variants={{
@@ -194,7 +192,7 @@ export default function PartenaireEmpruntisPage() {
             whileInView="visible"
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="mb-15 text-center text-3xl font-bold text-black dark:text-white"
+            className="mb-15 text-center text-3xl font-bold text-white"
           >
             Les 4 Étapes de Votre Projet
           </motion.h2>
@@ -213,13 +211,13 @@ export default function PartenaireEmpruntisPage() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="mb-5 inline-flex h-20 w-20 items-center justify-center rounded-full bg-primary text-3xl font-bold text-white">
+                <div className="mb-5 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-amber-500 text-3xl font-bold text-white shadow-lg ring-1 ring-white/10">
                   {etape.number}
                 </div>
-                <h3 className="mb-3 text-xl font-semibold text-black dark:text-white">
+                <h3 className="mb-3 text-xl font-semibold text-white">
                   {etape.title}
                 </h3>
-                <p className="text-base text-waterloo dark:text-manatee">
+                <p className="text-base text-manatee">
                   {etape.description}
                 </p>
               </motion.div>
@@ -240,12 +238,12 @@ export default function PartenaireEmpruntisPage() {
             whileInView="visible"
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="rounded-lg border border-stroke bg-gradient-to-r from-primary/10 to-primary/5 p-12.5 text-center dark:border-strokedark dark:from-primary/20 dark:to-primary/10"
+            className="rounded-lg border border-white/10 bg-gradient-to-r from-primary/20 to-primary/10 p-12.5 text-center"
           >
-            <h2 className="mb-5 text-2xl font-bold text-black dark:text-white xl:text-itemtitle">
+            <h2 className="mb-5 text-2xl font-bold text-white xl:text-itemtitle">
               Prêt à Démarrer Votre Projet ?
             </h2>
-            <p className="mb-7.5 text-base text-waterloo dark:text-manatee">
+            <p className="mb-7.5 text-base text-manatee">
               Nos conseillers experts vous accompagnent gratuitement et sans engagement
             </p>
             <div className="flex flex-wrap justify-center gap-5">
@@ -253,16 +251,16 @@ export default function PartenaireEmpruntisPage() {
                 href="https://www.empruntis.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
+                className="inline-flex items-center justify-center gap-2 rounded-full gradient-primary px-7.5 py-4 text-regular font-bold text-black shadow-lg transition-all hover:shadow-xl"
               >
-                <i className="fas fa-external-link-alt mr-2"></i>
+                <ExternalLink className="h-5 w-5" />
                 Visiter EMPRUNTIS
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full border-2 border-primary bg-transparent px-7.5 py-2.5 text-regular text-primary duration-300 ease-in-out hover:bg-primary hover:text-white"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary bg-transparent px-7.5 py-4 text-regular font-bold text-primary transition-all hover:bg-primary hover:text-black shadow-lg hover:shadow-xl"
               >
-                <i className="fas fa-phone mr-2"></i>
+                <Phone className="h-5 w-5" />
                 Nous Contacter
               </Link>
             </div>

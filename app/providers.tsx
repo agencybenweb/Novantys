@@ -7,7 +7,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <ThemeProvider
       enableSystem={false}
       attribute="class"
-      defaultTheme="light"
+      defaultTheme="dark"
     >
       {children}
       <Toaster position="top-right" />

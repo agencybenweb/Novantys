@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import { Calculator, Phone, Sparkles } from "lucide-react";
 
 export default function SimulateurPERPage() {
   const [age, setAge] = useState(35);
@@ -13,7 +14,7 @@ export default function SimulateurPERPage() {
     const capital = versement * years + (versement * years * 0.03);
     const rente = capital * 0.04 / 12;
     const economie = versement * 0.3;
-    
+
     return {
       capital: Math.round(capital),
       rente: Math.round(rente),
@@ -36,23 +37,23 @@ export default function SimulateurPERPage() {
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <h1 className="mb-5 text-center text-3xl font-bold text-black dark:text-white xl:text-hero">
+          <h1 className="mb-5 text-center text-3xl font-bold text-white xl:text-hero">
             Simulateur <span className="text-primary">PER</span>
           </h1>
-          <p className="mx-auto mb-15 max-w-3xl text-center text-xl text-waterloo dark:text-manatee">
+          <p className="mx-auto mb-20 max-w-3xl text-center text-xl text-manatee">
             Plan Épargne Retraite - Préparez votre retraite en optimisant votre fiscalité
           </p>
 
-          <div className="grid grid-cols-1 gap-7.5 lg:grid-cols-2">
+          <div className="flex flex-wrap items-center justify-center gap-25">
             {/* Formulaire */}
-            <div className="rounded-lg border border-stroke bg-white p-7.5 shadow-solid-3 dark:border-strokedark dark:bg-blacksection">
-              <h3 className="mb-7.5 text-xl font-bold text-black dark:text-white">
+            <div className="w-full max-w-[600px] rounded-lg border border-white/10 bg-blacksection p-7.5 shadow-solid-3 lg:w-[calc(50%-50px)]">
+              <h3 className="mb-7.5 text-xl font-bold text-white">
                 Vos Informations
               </h3>
-              
+
               <div className="space-y-5">
                 <div>
-                  <label className="mb-3 block text-sm font-medium text-black dark:text-white">
+                  <label className="mb-3 block text-sm font-medium text-white">
                     Votre âge: <span className="text-primary">{age} ans</span>
                   </label>
                   <input
@@ -66,7 +67,7 @@ export default function SimulateurPERPage() {
                 </div>
 
                 <div>
-                  <label className="mb-3 block text-sm font-medium text-black dark:text-white">
+                  <label className="mb-3 block text-sm font-medium text-white">
                     Revenu annuel: <span className="text-primary">{revenu.toLocaleString()} €</span>
                   </label>
                   <input
@@ -81,7 +82,7 @@ export default function SimulateurPERPage() {
                 </div>
 
                 <div>
-                  <label className="mb-3 block text-sm font-medium text-black dark:text-white">
+                  <label className="mb-3 block text-sm font-medium text-white">
                     Versement annuel: <span className="text-primary">{versement.toLocaleString()} €</span>
                   </label>
                   <input
@@ -98,14 +99,14 @@ export default function SimulateurPERPage() {
             </div>
 
             {/* Résultats */}
-            <div className="rounded-lg border border-stroke bg-gradient-to-br from-primary/10 to-primary/5 p-7.5 shadow-solid-3 dark:border-strokedark dark:from-primary/20 dark:to-primary/10">
-              <h3 className="mb-7.5 text-xl font-bold text-black dark:text-white">
+            <div className="w-full max-w-[600px] rounded-lg border border-white/10 bg-gradient-to-br from-primary/20 to-primary/10 p-7.5 shadow-solid-3 lg:w-[calc(50%-50px)]">
+              <h3 className="mb-7.5 text-xl font-bold text-white">
                 Résultats Estimés
               </h3>
-              
+
               <div className="space-y-5">
-                <div className="rounded-lg bg-white p-5 dark:bg-blacksection">
-                  <div className="mb-2 text-sm text-waterloo dark:text-manatee">
+                <div className="rounded-lg bg-black p-5">
+                  <div className="mb-2 text-sm text-manatee">
                     Capital estimé à la retraite
                   </div>
                   <div className="text-2xl font-bold text-primary">
@@ -113,8 +114,8 @@ export default function SimulateurPERPage() {
                   </div>
                 </div>
 
-                <div className="rounded-lg bg-white p-5 dark:bg-blacksection">
-                  <div className="mb-2 text-sm text-waterloo dark:text-manatee">
+                <div className="rounded-lg bg-black p-5">
+                  <div className="mb-2 text-sm text-manatee">
                     Rente mensuelle estimée
                   </div>
                   <div className="text-2xl font-bold text-primary">
@@ -122,8 +123,8 @@ export default function SimulateurPERPage() {
                   </div>
                 </div>
 
-                <div className="rounded-lg bg-white p-5 dark:bg-blacksection">
-                  <div className="mb-2 text-sm text-waterloo dark:text-manatee">
+                <div className="rounded-lg bg-black p-5">
+                  <div className="mb-2 text-sm text-manatee">
                     Économie d'impôt annuelle
                   </div>
                   <div className="text-2xl font-bold text-primary">
@@ -134,9 +135,9 @@ export default function SimulateurPERPage() {
 
               <Link
                 href="/contact"
-                className="mt-7.5 flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
+                className="mt-7.5 flex items-center justify-center gap-2 rounded-full gradient-primary px-7.5 py-4 text-regular font-bold text-black shadow-lg transition-all hover:shadow-xl"
               >
-                <i className="fas fa-phone mr-2"></i>
+                <Phone className="h-5 w-5" />
                 Être Rappelé par un Expert
               </Link>
             </div>

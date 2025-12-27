@@ -81,17 +81,17 @@ export default function CGVPage() {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/10 via-pink-50/50 to-purple-50/50 px-4 py-2 backdrop-blur-sm">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/20 via-amber-500/10 to-primary/20 px-4 py-2 backdrop-blur-sm ring-1 ring-white/10">
             <FileText className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-primary">Conditions générales</span>
           </div>
-          <h1 className="mb-4 text-4xl font-bold text-black dark:text-white xl:text-hero">
+          <h1 className="mb-4 text-4xl font-bold text-white xl:text-hero">
             Conditions Générales de Vente
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-waterloo dark:text-manatee">
+          <p className="mx-auto max-w-2xl text-lg text-manatee">
             Les présentes CGV régissent les relations entre Novantis Solutions et ses clients
           </p>
-          <p className="mx-auto mt-4 max-w-2xl text-sm text-waterloo dark:text-manatee">
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-manatee">
             Dernière mise à jour : {new Date().toLocaleDateString("fr-FR", { year: "numeric", month: "long", day: "numeric" })}
           </p>
         </motion.div>
@@ -102,9 +102,9 @@ export default function CGVPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mb-8 rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
+          className="mb-8 rounded-2xl border border-white/10 bg-blacksection p-8 shadow-lg"
         >
-          <p className="text-lg leading-relaxed text-waterloo dark:text-manatee">
+          <p className="text-lg leading-relaxed text-manatee">
             Les présentes Conditions Générales de Vente (CGV) s'appliquent à tous les services proposés par Novantis Solutions, société de courtage en assurance. En faisant appel à nos services, vous reconnaissez avoir pris connaissance et accepté ces conditions.
           </p>
         </motion.div>
@@ -118,17 +118,17 @@ export default function CGVPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: sectionIndex * 0.1 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
+              className="rounded-2xl border border-white/10 bg-blacksection p-8 shadow-lg"
             >
               <div className="mb-6 flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-amber-500">
                   <section.icon className="h-6 w-6 text-white" />
                 </div>
-                <h2 className="text-2xl font-bold text-black dark:text-white">{section.title}</h2>
+                <h2 className="text-2xl font-bold text-white">{section.title}</h2>
               </div>
               <div className="space-y-3">
                 {section.content.map((item, itemIndex) => (
-                  <p key={itemIndex} className="text-waterloo dark:text-manatee">
+                  <p key={itemIndex} className="text-manatee">
                     {item}
                   </p>
                 ))}
@@ -142,10 +142,10 @@ export default function CGVPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
+            className="rounded-2xl border border-white/10 bg-blacksection p-8 shadow-lg"
           >
-            <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">7. Droit de rétractation</h2>
-            <div className="space-y-4 text-waterloo dark:text-manatee">
+            <h2 className="mb-6 text-2xl font-bold text-white">7. Droit de rétractation</h2>
+            <div className="space-y-4 text-manatee">
               <p>
                 Conformément à la réglementation en vigueur, le client dispose d'un délai de rétractation de 14 jours calendaires à compter de la souscription du contrat d'assurance, sauf exceptions prévues par la loi.
               </p>
@@ -161,10 +161,10 @@ export default function CGVPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
+            className="rounded-2xl border border-white/10 bg-blacksection p-8 shadow-lg"
           >
-            <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">8. Responsabilité</h2>
-            <div className="space-y-4 text-waterloo dark:text-manatee">
+            <h2 className="mb-6 text-2xl font-bold text-white">8. Responsabilité</h2>
+            <div className="space-y-4 text-manatee">
               <p>
                 Novantis Solutions est tenue à une obligation de moyens et non de résultats. Sa responsabilité ne peut être engagée qu'en cas de faute prouvée dans l'exécution de ses prestations.
               </p>
@@ -183,10 +183,10 @@ export default function CGVPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
+            className="rounded-2xl border border-white/10 bg-blacksection p-8 shadow-lg"
           >
-            <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">9. Protection des données personnelles</h2>
-            <div className="space-y-4 text-waterloo dark:text-manatee">
+            <h2 className="mb-6 text-2xl font-bold text-white">9. Protection des données personnelles</h2>
+            <div className="space-y-4 text-manatee">
               <p>
                 Le traitement des données personnelles collectées dans le cadre de nos services est effectué conformément au RGPD et à notre politique de confidentialité.
               </p>
@@ -206,10 +206,10 @@ export default function CGVPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
+            className="rounded-2xl border border-white/10 bg-blacksection p-8 shadow-lg"
           >
-            <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">10. Médiation et litiges</h2>
-            <div className="space-y-4 text-waterloo dark:text-manatee">
+            <h2 className="mb-6 text-2xl font-bold text-white">10. Médiation et litiges</h2>
+            <div className="space-y-4 text-manatee">
               <p>
                 Conformément à l'article L. 612-1 du Code de la consommation, le client peut recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable d'un litige qui l'oppose à Novantis Solutions.
               </p>
@@ -227,10 +227,10 @@ export default function CGVPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
+            className="rounded-2xl border border-white/10 bg-blacksection p-8 shadow-lg"
           >
-            <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">11. Droit applicable et modifications</h2>
-            <div className="space-y-4 text-waterloo dark:text-manatee">
+            <h2 className="mb-6 text-2xl font-bold text-white">11. Droit applicable et modifications</h2>
+            <div className="space-y-4 text-manatee">
               <p>
                 Les présentes CGV sont régies par le droit français. Tout litige relatif à leur interprétation ou à leur exécution relève des tribunaux français.
               </p>
@@ -246,10 +246,10 @@ export default function CGVPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl bg-gradient-to-br from-primary/10 via-pink-50/50 to-purple-50/50 p-8 backdrop-blur-sm dark:from-primary/20 dark:via-pink-900/20 dark:to-purple-900/20"
+            className="rounded-2xl bg-gradient-to-br from-primary/10 via-amber-900/10 to-transparent p-8 backdrop-blur-sm ring-1 ring-white/10"
           >
-            <h2 className="mb-4 text-2xl font-bold text-black dark:text-white">Contact</h2>
-            <p className="mb-6 text-waterloo dark:text-manatee">
+            <h2 className="mb-4 text-2xl font-bold text-white">Contact</h2>
+            <p className="mb-6 text-manatee">
               Pour toute question concernant ces Conditions Générales de Vente, vous pouvez nous contacter :
             </p>
             <div className="space-y-4">
@@ -260,8 +260,8 @@ export default function CGVPage() {
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-lg font-semibold text-black dark:text-white">Par courrier :</span>
-                <span className="text-waterloo dark:text-manatee">Novantis Solutions - 31 rue Bistanclaque, 38110 Cessieu</span>
+                <span className="text-lg font-semibold text-white">Par courrier :</span>
+                <span className="text-manatee">Novantis Solutions - 31 rue Bistanclaque, 38110 Cessieu</span>
               </div>
             </div>
             <div className="mt-6">

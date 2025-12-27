@@ -65,14 +65,14 @@ const Partenaires = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-alabaster to-white py-20 dark:from-black dark:via-blacksection dark:to-black lg:py-25 xl:py-30">
+    <section className="relative overflow-hidden bg-white py-20 transition-colors duration-300 dark:bg-black lg:py-25 xl:py-30">
       {/* Decorative Background */}
       <div className="absolute inset-0 -z-1">
         <motion.div
-          className="absolute left-1/3 top-0 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-primary/10 via-pink-100/20 to-transparent blur-3xl"
+          className="absolute left-1/3 top-0 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-primary/10 via-amber-100/20 to-transparent blur-3xl opacity-30"
           animate={{
             y: [0, 50, 0],
-            opacity: [0.3, 0.5, 0.3],
+            opacity: [0.2, 0.4, 0.2],
           }}
           transition={{ duration: 8, repeat: Infinity }}
         />
@@ -86,7 +86,7 @@ const Partenaires = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/10 via-pink-50/50 to-purple-50/50 px-4 py-2 backdrop-blur-sm"
+            className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/20 via-amber-500/10 to-primary/20 px-4 py-2 backdrop-blur-sm ring-1 ring-white/10"
           >
             <Sparkles className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-primary">Nos Partenaires</span>
@@ -97,10 +97,10 @@ const Partenaires = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="mx-auto mb-4 text-3xl font-bold text-black dark:text-white md:w-4/5 xl:w-1/2 xl:text-sectiontitle3"
+            className="mx-auto mb-4 text-3xl font-bold text-beigetext dark:text-white md:w-4/5 xl:w-1/2 xl:text-sectiontitle3"
           >
             Des Partenaires{" "}
-            <span className="bg-gradient-to-r from-primary via-pink-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-amber-600 to-primary bg-clip-text text-transparent">
               d'Excellence
             </span>
           </motion.h2>
@@ -109,7 +109,7 @@ const Partenaires = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mx-auto text-lg text-waterloo dark:text-manatee md:w-4/5 xl:w-1/2"
+            className="mx-auto text-lg text-beigetextlight dark:text-manatee md:w-4/5 xl:w-1/2"
           >
             Nous collaborons avec les leaders de l'assurance pour vous garantir les meilleures solutions
           </motion.p>
@@ -117,8 +117,8 @@ const Partenaires = () => {
 
         {/* Partners Marquee */}
         <div className="relative mb-16 overflow-hidden">
-          <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent dark:from-black" />
-          <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent dark:from-black" />
+          <div className="absolute inset-y-0 left-0 z-1 w-24 bg-gradient-to-r from-white to-transparent dark:from-black" />
+          <div className="absolute inset-y-0 right-0 z-1 w-24 bg-gradient-to-l from-white to-transparent dark:from-black" />
 
           <motion.div
             initial={{ x: 0 }}
@@ -138,9 +138,9 @@ const Partenaires = () => {
                   rel="noopener noreferrer"
                   className="block"
                 >
-                  <div className="relative overflow-hidden rounded-2xl bg-white/80 p-5 shadow-lg ring-1 ring-black/5 backdrop-blur-sm transition-all hover:shadow-2xl dark:bg-blacksection/80 dark:ring-white/10">
+                  <div className="relative overflow-hidden rounded-2xl bg-white p-5 shadow-lg border border-stroke transition-all hover:shadow-2xl hover:border-primary/30 dark:bg-blacksection dark:border-white/10">
                     <div className={`absolute inset-0 bg-gradient-to-br ${partenaire.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-5`} />
-                    
+
                     <div className="relative mb-4 flex h-20 items-center justify-center">
                       <div className="relative h-14 w-28">
                         <Image
@@ -157,7 +157,7 @@ const Partenaires = () => {
                     <h5 className={`mb-1 text-center text-sm font-bold bg-gradient-to-r ${partenaire.gradient} bg-clip-text text-transparent`}>
                       {partenaire.nom}
                     </h5>
-                    <p className="text-center text-[11px] text-waterloo dark:text-manatee">
+                    <p className="text-center text-[11px] text-beigetextlight dark:text-manatee font-medium">
                       {partenaire.description}
                     </p>
                   </div>
@@ -175,19 +175,19 @@ const Partenaires = () => {
           viewport={{ once: true }}
           className="animate_top mx-auto max-w-4xl"
         >
-          <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-white/90 via-white/50 to-white/30 p-10 shadow-2xl ring-1 ring-black/5 backdrop-blur-xl dark:from-blacksection/90 dark:via-blacksection/50 dark:to-blacksection/30 dark:ring-white/10">
+          <div className="overflow-hidden rounded-3xl bg-beigesection p-10 shadow-xl border border-stroke backdrop-blur-xl dark:bg-blacksection dark:border-white/10">
             {/* Decorative Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-pink-50/30 to-purple-50/20 dark:from-primary/10 dark:via-pink-900/10 dark:to-purple-900/10" />
-            
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-amber-500/10 to-primary/5" />
+
             <div className="relative">
-              <h3 className="mb-10 text-center text-2xl font-bold text-black dark:text-white">
+              <h3 className="mb-10 text-center text-2xl font-bold text-beigetext dark:text-white">
                 Les Avantages de Nos{" "}
-                <span className="bg-gradient-to-r from-primary via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary via-amber-500 to-primary bg-clip-text text-transparent">
                   Partenariats
                 </span>
               </h3>
-              
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+
+              <div className="flex flex-wrap justify-center gap-8">
                 {[
                   {
                     icon: CheckCircle,
@@ -214,11 +214,11 @@ const Partenaires = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                     viewport={{ once: true }}
-                    className="text-center"
+                    className="w-full max-w-[280px] text-center md:w-[calc(33.33%-1.5rem)]"
                   >
                     <motion.div
                       className={`mx-auto mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${benefit.gradient} shadow-lg`}
-                      whileHover={{ 
+                      whileHover={{
                         scale: 1.1,
                         rotate: [0, -10, 10, -10, 0],
                         transition: { duration: 0.5 }
@@ -226,10 +226,10 @@ const Partenaires = () => {
                     >
                       <benefit.icon className="h-8 w-8 text-white" strokeWidth={2} />
                     </motion.div>
-                    <h5 className="mb-3 text-lg font-bold text-black dark:text-white">
+                    <h5 className="mb-3 text-lg font-bold text-beigetext dark:text-white">
                       {benefit.title}
                     </h5>
-                    <p className="text-sm leading-relaxed text-waterloo dark:text-manatee">
+                    <p className="text-sm leading-relaxed text-beigetextlight dark:text-manatee font-medium">
                       {benefit.description}
                     </p>
                   </motion.div>
@@ -247,7 +247,7 @@ const Partenaires = () => {
           viewport={{ once: true }}
           className="animate_top mt-16 text-center"
         >
-          <h4 className="mb-6 text-2xl font-bold text-black dark:text-white">
+          <h4 className="mb-6 text-2xl font-bold text-beigetext dark:text-white">
             Intéressé par nos solutions ?
           </h4>
           <motion.div
@@ -264,6 +264,8 @@ const Partenaires = () => {
           </motion.div>
         </motion.div>
       </div>
+      {/* Subtle transition to black footer */}
+      <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-black/5 to-transparent" />
     </section>
   );
 };

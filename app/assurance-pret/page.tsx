@@ -2,13 +2,13 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  Shield, 
-  Heart, 
+import {
+  Shield,
+  Heart,
   Activity,
-  Bed, 
-  UserMinus, 
-  Clock, 
+  Bed,
+  UserMinus,
+  Clock,
   Briefcase,
   DollarSign,
   Settings,
@@ -151,12 +151,12 @@ export default function AssurancePret() {
   ];
 
   return (
-    <main className="relative overflow-hidden bg-white dark:bg-black">
+    <main className="relative overflow-hidden bg-beigeluxe transition-colors duration-300 dark:bg-black">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-alabaster via-white to-alabaster py-20 dark:from-blacksection dark:via-black dark:to-blacksection lg:py-25 xl:py-30">
+      <section className="relative overflow-hidden bg-gradient-to-b from-beigeluxe via-beigesection to-beigeluxe py-20 dark:from-black dark:via-blacksection dark:to-black lg:py-25 xl:py-30">
         <div className="absolute inset-0 -z-1">
-        <motion.div
-            className="absolute left-1/4 top-0 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-primary/10 via-pink-100/20 to-transparent blur-3xl"
+          <motion.div
+            className="absolute left-1/4 top-0 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-primary/10 via-amber-200/5 to-transparent blur-3xl opacity-50"
             animate={{
               scale: [1, 1.2, 1],
               opacity: [0.3, 0.5, 0.3],
@@ -172,20 +172,20 @@ export default function AssurancePret() {
             transition={{ duration: 0.6 }}
             className="mx-auto text-center"
           >
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/10 via-pink-50/50 to-purple-50/50 px-4 py-2 backdrop-blur-sm">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/20 via-amber-500/10 to-primary/20 px-4 py-2 backdrop-blur-sm ring-1 ring-beigeborder dark:ring-white/10">
               <Shield className="h-4 w-4 text-primary" />
               <span className="text-sm font-medium text-primary">Assurance de Prêt</span>
             </div>
 
-            <h1 className="mb-6 text-4xl font-bold text-black dark:text-white xl:text-hero">
+            <h1 className="mb-6 text-4xl font-bold text-beigetext dark:text-white xl:text-hero">
               Assurance de Prêt Immobilier –{" "}
-              <span className="bg-gradient-to-r from-primary via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-amber-500 to-primary bg-clip-text text-transparent">
                 Économisez
               </span>{" "}
               sur Votre Financement
             </h1>
-            
-            <p className="mx-auto mb-8 max-w-3xl text-lg text-waterloo dark:text-manatee">
+
+            <p className="mx-auto mb-8 max-w-3xl text-lg text-beigetextlight dark:text-manatee">
               Découvrez comment réduire vos mensualités et protéger votre prêt immobilier avec une assurance adaptée à votre profil et votre projet.
             </p>
 
@@ -210,22 +210,23 @@ export default function AssurancePret() {
       {/* Qu'est-ce que l'Assurance de Prêt */}
       <section className="py-20 lg:py-25 xl:py-30">
         <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <div className="flex flex-col items-center gap-12 lg:flex-row xl:gap-25">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+              viewport={{ once: true }}
+              className="w-full lg:w-1/2"
             >
-              <h2 className="mb-6 text-3xl font-bold text-black dark:text-white">
+              <h2 className="mb-6 text-3xl font-bold text-beigetext dark:text-white">
                 Qu'est-ce que l'{" "}
-                <span className="bg-gradient-to-r from-primary via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary via-amber-500 to-primary bg-clip-text text-transparent">
                   Assurance de Prêt
                 </span>{" "}
                 ?
               </h2>
-              
-              <p className="mb-6 text-base leading-relaxed text-waterloo dark:text-manatee">
+
+              <p className="mb-6 text-base leading-relaxed text-beigetextlight dark:text-manatee">
                 L'assurance emprunteur garantit le remboursement total ou partiel de votre prêt immobilier en cas :
               </p>
 
@@ -247,17 +248,17 @@ export default function AssurancePret() {
                     <div className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${item.color} shadow-lg`}>
                       <item.icon className="h-7 w-7 text-white" strokeWidth={2} />
                     </div>
-                    <span className="text-base font-medium text-black dark:text-white">{item.text}</span>
+                    <span className="text-base font-medium text-beigetext dark:text-white">{item.text}</span>
                   </motion.div>
                 ))}
               </div>
 
-              <div className="mt-8 rounded-2xl bg-gradient-to-br from-primary/10 via-pink-50/50 to-purple-50/30 p-6 backdrop-blur-sm">
+              <div className="mt-8 rounded-2xl bg-gradient-to-br from-beigesection via-white to-beigesection p-6 ring-1 ring-beigeborder backdrop-blur-sm dark:from-blacksection dark:via-black dark:to-blacksection dark:ring-white/10">
                 <div className="flex items-start gap-4">
-                  <Shield className="h-8 w-8 flex-shrink-0 text-emerald-500" strokeWidth={2} />
+                  <Shield className="h-8 w-8 flex-shrink-0 text-amber-500" strokeWidth={2} />
                   <div>
-                    <p className="font-semibold text-black dark:text-white">Protection complète de votre emprunt</p>
-                    <p className="mt-2 text-sm text-waterloo dark:text-manatee">
+                    <p className="font-semibold text-beigetext dark:text-white">Protection complète de votre emprunt</p>
+                    <p className="mt-2 text-sm text-beigetextlight dark:text-manatee">
                       Elle est exigée par les banques pour sécuriser le remboursement du crédit, même si ce n'est pas légalement obligatoire.
                     </p>
                   </div>
@@ -270,7 +271,7 @@ export default function AssurancePret() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative w-full lg:w-1/2"
             >
               <div className="relative h-full min-h-[500px] overflow-hidden rounded-3xl">
                 <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5 dark:from-primary/20 dark:to-primary/10">
@@ -283,7 +284,7 @@ export default function AssurancePret() {
       </section>
 
       {/* Pourquoi Souscrire */}
-      <section className="relative overflow-hidden bg-alabaster py-20 dark:bg-blacksection lg:py-25 xl:py-30">
+      <section className="relative overflow-hidden bg-beigeluxe py-20 dark:bg-black lg:py-25 xl:py-30">
         <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -292,16 +293,16 @@ export default function AssurancePret() {
             viewport={{ once: true }}
             className="mx-auto mb-16 text-center"
           >
-            <h2 className="mb-4 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+            <h2 className="mb-4 text-3xl font-bold text-beigetext dark:text-white xl:text-sectiontitle3">
               Pourquoi Souscrire une{" "}
-              <span className="bg-gradient-to-r from-primary via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-amber-500 to-primary bg-clip-text text-transparent">
                 Assurance de Prêt
               </span>{" "}
               ?
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="flex flex-wrap justify-center gap-8">
             {pourquoiSouscrire.map((item, index) => (
               <motion.div
                 key={item.id}
@@ -310,12 +311,12 @@ export default function AssurancePret() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -8 }}
-                className="group"
+                className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] max-w-[400px]"
               >
-                <div className="relative h-full overflow-hidden rounded-3xl bg-white/80 p-8 text-center shadow-lg ring-1 ring-black/5 backdrop-blur-sm transition-all hover:shadow-2xl dark:bg-blacksection/80 dark:ring-white/10">
+                <div className="relative h-full overflow-hidden rounded-3xl bg-white/80 p-8 text-center shadow-lg ring-1 ring-beigeborder backdrop-blur-sm transition-all hover:shadow-2xl dark:bg-blacksection/80 dark:ring-white/10">
                   <motion.div
                     className={`mx-auto mb-6 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br ${item.gradient} shadow-lg`}
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.1,
                       rotate: [0, -10, 10, -10, 0],
                       transition: { duration: 0.5 }
@@ -323,10 +324,10 @@ export default function AssurancePret() {
                   >
                     <item.icon className="h-10 w-10 text-white" strokeWidth={2} />
                   </motion.div>
-                  <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
+                  <h3 className="mb-4 text-xl font-bold text-beigetext dark:text-white">
                     {item.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-waterloo dark:text-manatee">
+                  <p className="text-sm leading-relaxed text-beigetextlight dark:text-manatee">
                     {item.description}
                   </p>
                 </div>
@@ -346,15 +347,15 @@ export default function AssurancePret() {
             viewport={{ once: true }}
             className="mx-auto mb-16 text-center"
           >
-            <h2 className="mb-4 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+            <h2 className="mb-4 text-3xl font-bold text-beigetext dark:text-white xl:text-sectiontitle3">
               Garanties Principales d'une{" "}
-              <span className="bg-gradient-to-r from-primary via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-amber-500 to-primary bg-clip-text text-transparent">
                 Assurance de Prêt
               </span>
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="flex flex-wrap justify-center gap-6">
             {garanties.map((garantie, index) => (
               <motion.div
                 key={garantie.id}
@@ -363,17 +364,17 @@ export default function AssurancePret() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ x: 5 }}
-                className="group"
+                className="group w-full md:w-[calc(50%-1rem)] max-w-[580px]"
               >
-                <div className="flex items-start gap-4 rounded-2xl bg-white/80 p-6 shadow-md ring-1 ring-black/5 backdrop-blur-sm transition-all hover:shadow-lg dark:bg-blacksection/80 dark:ring-white/10">
+                <div className="flex items-start gap-4 rounded-2xl bg-white/80 p-6 shadow-md ring-1 ring-beigeborder backdrop-blur-sm transition-all hover:shadow-lg dark:bg-blacksection/80 dark:ring-white/10">
                   <div className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${garantie.gradient} shadow-lg`}>
                     <garantie.icon className="h-8 w-8 text-white" strokeWidth={2} />
                   </div>
                   <div>
-                    <h3 className="mb-2 text-lg font-bold text-black dark:text-white">
+                    <h3 className="mb-2 text-lg font-bold text-beigetext dark:text-white">
                       {garantie.title}
                     </h3>
-                    <p className="text-sm text-waterloo dark:text-manatee">
+                    <p className="text-sm text-beigetextlight dark:text-manatee">
                       {garantie.description}
                     </p>
                   </div>
@@ -385,7 +386,7 @@ export default function AssurancePret() {
       </section>
 
       {/* Pour Qui */}
-      <section className="relative overflow-hidden bg-alabaster py-20 dark:bg-blacksection lg:py-25 xl:py-30">
+      <section className="relative overflow-hidden bg-beigeluxe py-20 dark:bg-black lg:py-25 xl:py-30">
         <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -394,12 +395,12 @@ export default function AssurancePret() {
             viewport={{ once: true }}
             className="mx-auto mb-16 text-center"
           >
-            <h2 className="mb-4 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+            <h2 className="mb-4 text-3xl font-bold text-beigetext dark:text-white xl:text-sectiontitle3">
               Pour Qui ?
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="flex flex-wrap justify-center gap-8">
             {pourQui.map((item, index) => (
               <motion.div
                 key={item.id}
@@ -408,11 +409,12 @@ export default function AssurancePret() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -8 }}
+                className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] max-w-[400px]"
               >
-                <div className="relative h-full overflow-hidden rounded-3xl bg-white/80 p-8 text-center shadow-lg ring-1 ring-black/5 backdrop-blur-sm transition-all hover:shadow-2xl dark:bg-blacksection/80 dark:ring-white/10">
+                <div className="relative h-full overflow-hidden rounded-3xl bg-white/80 p-8 text-center shadow-lg ring-1 ring-beigeborder backdrop-blur-sm transition-all hover:shadow-2xl dark:bg-blacksection/80 dark:ring-white/10">
                   <motion.div
                     className={`mx-auto mb-6 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br ${item.gradient} shadow-lg`}
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.1,
                       rotate: 360,
                       transition: { duration: 0.6 }
@@ -420,10 +422,10 @@ export default function AssurancePret() {
                   >
                     <item.icon className="h-10 w-10 text-white" strokeWidth={2} />
                   </motion.div>
-                  <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
+                  <h3 className="mb-4 text-xl font-bold text-beigetext dark:text-white">
                     {item.title}
                   </h3>
-                  <p className="text-base text-waterloo dark:text-manatee">
+                  <p className="text-base text-beigetextlight dark:text-manatee">
                     {item.description}
                   </p>
                 </div>
@@ -443,18 +445,18 @@ export default function AssurancePret() {
             viewport={{ once: true }}
             className="mx-auto mb-16 text-center"
           >
-            <h2 className="mb-4 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+            <h2 className="mb-4 text-3xl font-bold text-beigetext dark:text-white xl:text-sectiontitle3">
               Exemples d'{" "}
-              <span className="bg-gradient-to-r from-primary via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-amber-500 to-primary bg-clip-text text-transparent">
                 Économies Réalisées
               </span>
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-waterloo dark:text-manatee">
+            <p className="mx-auto max-w-2xl text-lg text-beigetextlight dark:text-manatee">
               Découvrez les économies que nos clients ont pu réaliser grâce à notre expertise
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="flex flex-wrap justify-center gap-8">
             {exemplesEconomie.map((exemple, index) => (
               <motion.div
                 key={index}
@@ -463,12 +465,13 @@ export default function AssurancePret() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -8, scale: 1.02 }}
+                className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] max-w-[400px]"
               >
                 <div className={`relative h-full overflow-hidden rounded-3xl bg-gradient-to-br ${exemple.gradient} p-8 text-white shadow-2xl`}>
                   <div className="relative">
                     <h3 className="mb-2 text-2xl font-bold">{exemple.nom}, {exemple.age}</h3>
                     <p className="mb-6 text-sm opacity-90">Emprunte {exemple.montant} sur {exemple.duree}</p>
-                    
+
                     <div className="space-y-3 border-t border-white/20 pt-6">
                       <div className="flex items-center justify-between">
                         <span className="text-sm">Assurance banque :</span>
@@ -492,42 +495,42 @@ export default function AssurancePret() {
       </section>
 
       {/* Call to Action */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-alabaster via-white to-alabaster py-20 dark:from-blacksection dark:via-black dark:to-blacksection lg:py-25">
+      <section className="relative overflow-hidden bg-gradient-to-b from-beigeluxe via-beigesection to-beigeluxe py-20 dark:from-black dark:via-blacksection dark:to-black lg:py-25">
         <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="mx-auto max-w-3xl overflow-hidden rounded-3xl bg-gradient-to-br from-white/90 via-white/50 to-white/30 p-12 text-center shadow-2xl ring-1 ring-black/5 backdrop-blur-xl dark:from-blacksection/90 dark:via-blacksection/50 dark:to-blacksection/30 dark:ring-white/10"
+            className="mx-auto max-w-3xl overflow-hidden rounded-3xl bg-gradient-to-br from-beigesection via-white to-beigesection p-12 text-center shadow-2xl ring-1 ring-beigeborder backdrop-blur-xl dark:from-blacksection dark:via-black dark:to-blacksection dark:ring-white/10"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-pink-50/30 to-purple-50/20 dark:from-primary/10 dark:via-pink-900/10 dark:to-purple-900/10" />
-            
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-amber-500/10 to-primary/5" />
+
             <div className="relative">
               <Sparkles className="mx-auto mb-6 h-16 w-16 text-primary" />
-              <h2 className="mb-4 text-3xl font-bold text-black dark:text-white">
+              <h2 className="mb-4 text-3xl font-bold text-beigetext dark:text-white">
                 Faites Votre Devis Assurance de Prêt
-            </h2>
-              <p className="mb-8 text-lg text-waterloo dark:text-manatee">
+              </h2>
+              <p className="mb-8 text-lg text-beigetextlight dark:text-manatee">
                 Avec votre conseillère en prenant un rendez-vous
-            </p>
-              
+              </p>
+
               <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-            <Link
-              href="/contact"
+                <Link
+                  href="/contact"
                   className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-amber-500 px-10 py-5 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl"
-            >
+                >
                   <Calendar className="h-6 w-6" />
                   <span>Prendre Rendez-Vous</span>
                   <ArrowRight className="h-5 w-5" />
-            </Link>
+                </Link>
               </motion.div>
-          </div>
-        </motion.div>
-      </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
     </main>
   );

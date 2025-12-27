@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { UserCheck, MapPin, Mail, Clock, Phone, Send, Sparkles } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -44,7 +45,7 @@ export default function ContactPage() {
   return (
     <main className="pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46">
       <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-        <div className="flex flex-col gap-7.5 lg:flex-row xl:gap-12.5">
+        <div className="flex flex-col items-center gap-7.5 lg:flex-row xl:gap-25">
           {/* Left Side - Contact Info */}
           <motion.div
             variants={{
@@ -61,29 +62,29 @@ export default function ContactPage() {
             whileInView="visible"
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="animate_left w-full lg:w-1/2"
+            className="animate_left w-full lg:w-[calc(50%-50px)]"
           >
-            <h1 className="mb-5 text-3xl font-bold text-black dark:text-white xl:text-hero">
+            <h1 className="mb-5 text-3xl font-bold text-beigetext dark:text-white xl:text-hero">
               Contactez-Nous
             </h1>
 
-            <p className="mb-4 text-xl text-waterloo dark:text-manatee">
+            <p className="mb-4 text-xl text-beigetextlight dark:text-manatee">
               Envie de faire le point sur votre situation ?
             </p>
 
-            <p className="mb-7.5 text-base text-waterloo dark:text-manatee">
+            <p className="mb-7.5 text-base text-beigetextlight dark:text-manatee">
               Prenez rendez-vous dès aujourd'hui pour un accompagnement personnalisé et gratuit.
             </p>
 
             {/* Quick Contact Card */}
-            <div className="mb-7.5 rounded-lg border border-stroke bg-primary/5 p-7.5 dark:border-strokedark dark:bg-primary/10">
+            <div className="mb-7.5 rounded-2xl border border-beigeborder bg-white p-7.5 shadow-solid-7 ring-1 ring-beigeborder dark:bg-blacksection dark:border-white/10 dark:ring-white/10">
               <div className="flex items-center gap-4">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary">
-                  <i className="fas fa-user-tie text-2xl text-white"></i>
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary to-amber-500 shadow-lg">
+                  <UserCheck className="h-8 w-8 text-white" />
                 </div>
                 <div>
-                  <h5 className="mb-1 text-lg font-semibold text-black dark:text-white">
-                    Notre Conseiller
+                  <h5 className="mb-1 text-lg font-semibold text-beigetext dark:text-white">
+                    Votre Courtière
                   </h5>
                   <p className="text-base font-bold text-primary">
                     +33 6 37 76 41 90
@@ -97,31 +98,31 @@ export default function ContactPage() {
               <h5 className="mb-5 text-xl font-semibold text-primary">
                 Nos Coordonnées :
               </h5>
-              
+
               <div className="space-y-4">
                 {[
                   {
-                    icon: "fas fa-map-marker-alt",
+                    icon: MapPin,
                     text: "31 rue Bistanclaque, 38110 Cessieu",
                   },
                   {
-                    icon: "fas fa-envelope",
+                    icon: Mail,
                     text: "contact@novantys-solutions.fr",
                   },
                   {
-                    icon: "fas fa-clock",
+                    icon: Clock,
                     text: "Lun - Ven : 9h00 - 18h00",
                   },
                   {
-                    icon: "fas fa-phone",
+                    icon: Phone,
                     text: "Urgences : 24h/24",
                   },
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary">
-                      <i className={`${item.icon} text-white`}></i>
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 ring-1 ring-beigeborder dark:ring-white/10">
+                      <item.icon className="h-5 w-5 text-primary" />
                     </div>
-                    <span className="text-base text-waterloo dark:text-manatee">
+                    <span className="text-base text-beigetextlight dark:text-manatee">
                       {item.text}
                     </span>
                   </div>
@@ -146,10 +147,10 @@ export default function ContactPage() {
             whileInView="visible"
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="animate_right w-full lg:w-1/2"
+            className="animate_right w-full lg:w-[calc(50%-50px)]"
           >
-            <div className="rounded-lg border border-stroke bg-white p-7.5 shadow-solid-3 dark:border-strokedark dark:bg-blacksection xl:p-12.5">
-              <h3 className="mb-7.5 text-2xl font-semibold text-black dark:text-white xl:text-itemtitle">
+            <div className="rounded-lg border border-primary/20 bg-beigesection p-7.5 shadow-solid-3 dark:bg-blacksection xl:p-12.5">
+              <h3 className="mb-7.5 text-2xl font-semibold text-beigetext dark:text-white xl:text-itemtitle">
                 Prenez Rendez-Vous
               </h3>
 
@@ -159,7 +160,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="name"
-                        className="mb-3 block text-sm font-medium text-black dark:text-white"
+                        className="mb-3 block text-sm font-medium text-beigetext dark:text-white"
                       >
                         Votre Nom
                       </label>
@@ -171,14 +172,14 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                        className="w-full rounded-lg border border-primary/20 bg-transparent px-5 py-3 text-beigetext dark:text-white outline-none transition focus:border-primary active:border-primary disabled:cursor-default"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="email"
-                        className="mb-3 block text-sm font-medium text-black dark:text-white"
+                        className="mb-3 block text-sm font-medium text-beigetext dark:text-white"
                       >
                         Votre Email
                       </label>
@@ -190,7 +191,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                        className="w-full rounded-lg border border-primary/20 bg-transparent px-5 py-3 text-beigetext dark:text-white outline-none transition focus:border-primary active:border-primary disabled:cursor-default"
                       />
                     </div>
                   </div>
@@ -199,7 +200,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="phone"
-                        className="mb-3 block text-sm font-medium text-black dark:text-white"
+                        className="mb-3 block text-sm font-medium text-beigetext dark:text-white"
                       >
                         Votre Téléphone
                       </label>
@@ -211,14 +212,14 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                        className="w-full rounded-lg border border-primary/20 bg-transparent px-5 py-3 text-beigetext dark:text-white outline-none transition focus:border-primary active:border-primary disabled:cursor-default"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="serviceType"
-                        className="mb-3 block text-sm font-medium text-black dark:text-white"
+                        className="mb-3 block text-sm font-medium text-beigetext dark:text-white"
                       >
                         Type de Service
                       </label>
@@ -228,11 +229,11 @@ export default function ContactPage() {
                         value={formData.serviceType}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                        className="w-full rounded-lg border border-primary/20 bg-transparent px-5 py-3 text-beigetext dark:text-white outline-none transition focus:border-primary active:border-primary disabled:cursor-default"
                       >
-                        <option value="">Choisissez un service</option>
+                        <option value="" className="bg-white text-beigetext dark:bg-blacksection dark:text-white">Choisissez un service</option>
                         {serviceTypes.map((service, index) => (
-                          <option key={index} value={service}>
+                          <option key={index} value={service} className="bg-white text-beigetext dark:bg-blacksection dark:text-white">
                             {service}
                           </option>
                         ))}
@@ -243,7 +244,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="mb-3 block text-sm font-medium text-black dark:text-white"
+                      className="mb-3 block text-sm font-medium text-beigetext dark:text-white"
                     >
                       Votre Message
                     </label>
@@ -254,16 +255,15 @@ export default function ContactPage() {
                       placeholder="Décrivez vos besoins..."
                       value={formData.message}
                       onChange={handleChange}
-                      required
-                      className="w-full rounded-lg border border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                      className="w-full rounded-lg border border-primary/20 bg-transparent px-5 py-3 text-beigetext dark:text-white outline-none transition focus:border-primary active:border-primary disabled:cursor-default"
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
+                    className="flex items-center justify-center gap-2 rounded-full gradient-primary px-7.5 py-4 text-regular font-bold text-black shadow-lg transition-all hover:shadow-xl"
                   >
-                    <i className="fas fa-paper-plane mr-2"></i>
+                    <Send className="h-5 w-5" />
                     Prendre Rendez-Vous
                   </button>
                 </div>
@@ -275,4 +275,3 @@ export default function ContactPage() {
     </main>
   );
 }
-

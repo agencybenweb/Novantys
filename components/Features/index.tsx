@@ -39,22 +39,22 @@ const Features = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white py-20 dark:bg-black lg:py-25 xl:py-30">
+    <section className="relative overflow-hidden bg-beigesection py-20 transition-colors duration-300 dark:bg-blacksection lg:py-25 xl:py-30">
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-1">
         <motion.div
-          className="absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-primary/10 via-pink-100/20 to-transparent blur-3xl"
+          className="absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/10 blur-3xl opacity-50"
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
+            opacity: [0.05, 0.1, 0.05],
           }}
           transition={{ duration: 8, repeat: Infinity }}
         />
         <motion.div
-          className="absolute right-1/4 bottom-1/4 h-[400px] w-[400px] rounded-full bg-gradient-to-tl from-purple-100/20 via-primary/10 to-transparent blur-3xl"
+          className="absolute right-1/4 bottom-1/4 h-[400px] w-[400px] rounded-full bg-primary/10 blur-3xl opacity-50"
           animate={{
             scale: [1.2, 1, 1.2],
-            opacity: [0.2, 0.4, 0.2],
+            opacity: [0.05, 0.15, 0.05],
           }}
           transition={{ duration: 10, repeat: Infinity }}
         />
@@ -69,24 +69,24 @@ const Features = () => {
           viewport={{ once: true }}
           className="mx-auto mb-16 text-center"
         >
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/10 via-pink-50/50 to-purple-50/50 px-4 py-2 backdrop-blur-sm">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 backdrop-blur-sm">
             <Sparkles className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-primary">Nos Avantages</span>
           </div>
-          
-          <h2 className="mb-4 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+
+          <h2 className="mb-4 text-3xl font-bold text-beigetext dark:text-white xl:text-sectiontitle3">
             Pourquoi Choisir{" "}
-            <span className="bg-gradient-to-r from-primary via-pink-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-amber-600 to-primary bg-clip-text text-transparent">
               Novantys ?
             </span>
           </h2>
-          <p className="mx-auto max-w-3xl text-lg text-waterloo dark:text-manatee">
+          <p className="mx-auto max-w-3xl text-lg text-beigetextlight dark:text-manatee">
             Une approche premium qui fait toute la différence pour votre protection et votre avenir
           </p>
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="flex flex-wrap justify-center gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={feature.id}
@@ -95,33 +95,33 @@ const Features = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
-              className="group"
+              className="group w-full md:w-[calc(50%-1rem)] max-w-[580px]"
             >
-              <div className="relative h-full overflow-hidden rounded-3xl bg-white/80 p-8 shadow-lg ring-1 ring-black/5 backdrop-blur-sm transition-all hover:shadow-2xl dark:bg-blacksection/80 dark:ring-white/10">
+              <div className="relative h-full overflow-hidden rounded-3xl bg-white border border-primary/10 p-8 shadow-solid-1 transition-all hover:border-primary/50 hover:shadow-solid-7 dark:bg-titlebg2 dark:border-white/5">
                 {/* Icon & Title */}
                 <div className="mb-6 flex items-start gap-4">
                   <motion.div
-                    className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${feature.gradient} shadow-lg`}
-                    whileHover={{ 
+                    className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-white border border-primary/10 shadow-md transition-shadow group-hover:shadow-primary/20`}
+                    whileHover={{
                       scale: 1.1,
                       rotate: [0, -10, 10, -10, 0],
                       transition: { duration: 0.5 }
                     }}
                   >
-                    <feature.icon className="h-8 w-8 text-white" strokeWidth={2} />
+                    <feature.icon className="h-8 w-8 text-primary" strokeWidth={2} />
                   </motion.div>
                   <div className="flex-1">
-                    <h3 className="mb-2 text-xl font-bold text-black dark:text-white">
+                    <h3 className="mb-2 text-xl font-bold text-beigetext dark:text-white">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-waterloo dark:text-manatee">
+                    <p className="text-base text-beigetextlight dark:text-manatee">
                       {feature.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Benefits */}
-                <div className="space-y-2">
+                <div className="mt-6 space-y-3">
                   {feature.benefits.map((benefit, idx) => (
                     <motion.div
                       key={idx}
@@ -129,10 +129,10 @@ const Features = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
                       viewport={{ once: true }}
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-3"
                     >
-                      <CheckCircle2 className={`h-5 w-5 bg-gradient-to-br ${feature.gradient} bg-clip-text text-transparent`} />
-                      <span className="text-sm font-medium text-black dark:text-white">
+                      <CheckCircle2 className={`h-5 w-5 text-primary`} />
+                      <span className="text-sm font-bold text-beigetext dark:text-manatee">
                         {benefit}
                       </span>
                     </motion.div>

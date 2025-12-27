@@ -95,14 +95,14 @@ export default function MentionsLegalesPage() {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/10 via-pink-50/50 to-purple-50/50 px-4 py-2 backdrop-blur-sm">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/20 via-amber-500/10 to-primary/20 px-4 py-2 backdrop-blur-sm ring-1 ring-white/10">
             <FileText className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-primary">Informations légales</span>
           </div>
-          <h1 className="mb-4 text-4xl font-bold text-black dark:text-white xl:text-hero">
+          <h1 className="mb-4 text-4xl font-bold text-white xl:text-hero">
             Mentions Légales
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-waterloo dark:text-manatee">
+          <p className="mx-auto max-w-2xl text-lg text-manatee">
             Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l&apos;économie numérique
           </p>
         </motion.div>
@@ -116,22 +116,22 @@ export default function MentionsLegalesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: sectionIndex * 0.1 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
+              className="rounded-2xl border border-white/10 bg-blacksection p-8 shadow-lg"
             >
               <div className="mb-6 flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-amber-500">
                   <section.icon className="h-6 w-6 text-white" />
                 </div>
-                <h2 className="text-2xl font-bold text-black dark:text-white">{section.title}</h2>
+                <h2 className="text-2xl font-bold text-white">{section.title}</h2>
               </div>
               <div className="space-y-4">
                 {section.content.map((item, itemIndex) => (
                   <div
                     key={itemIndex}
-                    className="flex flex-col gap-2 border-b border-stroke pb-4 last:border-0 dark:border-strokedark md:flex-row md:items-center"
+                    className="flex flex-col gap-2 border-b border-white/10 pb-4 last:border-0 md:flex-row md:items-center"
                   >
-                    <span className="min-w-[200px] font-semibold text-black dark:text-white">{item.label} :</span>
-                    <span className="text-waterloo dark:text-manatee">{item.value}</span>
+                    <span className="min-w-[200px] font-semibold text-white">{item.label} :</span>
+                    <span className="text-manatee">{item.value}</span>
                   </div>
                 ))}
               </div>
@@ -144,12 +144,12 @@ export default function MentionsLegalesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
+            className="rounded-2xl border border-white/10 bg-blacksection p-8 shadow-lg"
           >
-            <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">Hébergement et Prestation Web</h2>
-            <div className="space-y-4 text-waterloo dark:text-manatee">
+            <h2 className="mb-6 text-2xl font-bold text-white">Hébergement et Prestation Web</h2>
+            <div className="space-y-4 text-manatee">
               <p>
-                Le site web a été réalisé et est hébergé par <strong className="text-black dark:text-white">My Atlantic Agency</strong>, prestataire technique.
+                Le site web a été réalisé et est hébergé par <strong className="text-white">My Atlantic Agency</strong>, prestataire technique.
               </p>
             </div>
           </motion.div>
@@ -160,10 +160,10 @@ export default function MentionsLegalesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
+            className="rounded-2xl border border-white/10 bg-blacksection p-8 shadow-lg"
           >
-            <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">Propriété Intellectuelle</h2>
-            <div className="space-y-4 text-waterloo dark:text-manatee">
+            <h2 className="mb-6 text-2xl font-bold text-white">Propriété Intellectuelle</h2>
+            <div className="space-y-4 text-manatee">
               <p>
                 L&apos;ensemble de ce site relève de la législation française et internationale sur le droit d&apos;auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.
               </p>
@@ -179,10 +179,10 @@ export default function MentionsLegalesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
+            className="rounded-2xl border border-white/10 bg-blacksection p-8 shadow-lg"
           >
-            <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">Protection des Données Personnelles</h2>
-            <div className="space-y-4 text-waterloo dark:text-manatee">
+            <h2 className="mb-6 text-2xl font-bold text-white">Protection des Données Personnelles</h2>
+            <div className="space-y-4 text-manatee">
               <p>
                 Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d&apos;un droit d&apos;accès, de rectification, de suppression et d&apos;opposition aux données personnelles vous concernant.
               </p>
@@ -208,10 +208,10 @@ export default function MentionsLegalesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
+            className="rounded-2xl border border-white/10 bg-blacksection p-8 shadow-lg"
           >
-            <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">Cookies</h2>
-            <div className="space-y-4 text-waterloo dark:text-manatee">
+            <h2 className="mb-6 text-2xl font-bold text-white">Cookies</h2>
+            <div className="space-y-4 text-manatee">
               <p>
                 Ce site utilise des cookies pour améliorer l&apos;expérience utilisateur. En continuant à naviguer sur ce site, vous acceptez l&apos;utilisation de cookies conformément à notre politique de confidentialité.
               </p>
@@ -224,10 +224,10 @@ export default function MentionsLegalesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-stroke bg-white p-8 shadow-lg dark:border-strokedark dark:bg-blacksection"
+            className="rounded-2xl border border-white/10 bg-blacksection p-8 shadow-lg"
           >
-            <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">Limitation de Responsabilité</h2>
-            <div className="space-y-4 text-waterloo dark:text-manatee">
+            <h2 className="mb-6 text-2xl font-bold text-white">Limitation de Responsabilité</h2>
+            <div className="space-y-4 text-manatee">
               <p>
                 NOVANTYS SOLUTION s&apos;efforce d&apos;assurer l&apos;exactitude et la mise à jour des informations diffusées sur ce site, dont elle se réserve le droit de corriger, à tout moment et sans préavis, le contenu.
               </p>
@@ -243,10 +243,10 @@ export default function MentionsLegalesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl bg-gradient-to-br from-primary/10 via-pink-50/50 to-purple-50/50 p-8 backdrop-blur-sm dark:from-primary/20 dark:via-pink-900/20 dark:to-purple-900/20"
+            className="rounded-2xl bg-gradient-to-br from-primary/10 via-pink-900/20 to-purple-900/20 p-8 backdrop-blur-sm"
           >
-            <h2 className="mb-4 text-2xl font-bold text-black dark:text-white">Contact</h2>
-            <p className="mb-6 text-waterloo dark:text-manatee">
+            <h2 className="mb-4 text-2xl font-bold text-white">Contact</h2>
+            <p className="mb-6 text-manatee">
               Pour toute question concernant ces mentions légales, vous pouvez nous contacter :
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">

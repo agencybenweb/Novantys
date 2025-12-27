@@ -2,10 +2,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
-import { 
-  Heart, 
-  Award, 
-  Users, 
+import {
+  Heart,
+  Award,
+  Users,
   Sparkles,
   Shield,
   Phone,
@@ -47,22 +47,22 @@ const AboutCourtier = () => {
   ];
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-gradient-to-b from-alabaster via-white to-alabaster py-20 dark:from-blacksection dark:via-black dark:to-blacksection lg:py-25 xl:py-30">
+    <section ref={ref} className="relative overflow-hidden bg-white py-20 transition-colors duration-300 dark:bg-black py-20 lg:py-25 xl:py-30">
       {/* Decorative Background */}
       <div className="absolute inset-0 -z-1">
         <motion.div
-          className="absolute left-0 top-1/4 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-primary/10 via-pink-100/20 to-transparent blur-3xl"
+          className="absolute left-0 top-1/4 h-[600px] w-[600px] rounded-full bg-primary/5 blur-3xl opacity-40"
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
+            opacity: [0.1, 0.2, 0.1],
           }}
           transition={{ duration: 8, repeat: Infinity }}
         />
         <motion.div
-          className="absolute right-0 bottom-1/4 h-[500px] w-[500px] rounded-full bg-gradient-to-tl from-purple-100/20 via-primary/10 to-transparent blur-3xl"
+          className="absolute right-0 bottom-1/4 h-[500px] w-[500px] rounded-full bg-primary/5 blur-3xl opacity-40"
           animate={{
             scale: [1.2, 1, 1.2],
-            opacity: [0.2, 0.4, 0.2],
+            opacity: [0.1, 0.3, 0.1],
           }}
           transition={{ duration: 10, repeat: Infinity }}
         />
@@ -76,36 +76,36 @@ const AboutCourtier = () => {
           transition={{ duration: 0.6 }}
           className="mx-auto mb-16 text-center"
         >
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/10 via-pink-50/50 to-purple-50/50 px-4 py-2 backdrop-blur-sm">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 backdrop-blur-sm">
             <Sparkles className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-primary">Votre Courtière Experte</span>
           </div>
-          <h2 className="mb-4 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+          <h2 className="mb-4 text-3xl font-bold text-beigetext dark:text-white xl:text-sectiontitle3">
             Une Professionnelle à{" "}
-            <span className="bg-gradient-to-r from-primary via-pink-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-amber-600 to-primary bg-clip-text text-transparent">
               Votre Écoute
             </span>
           </h2>
-          <p className="mx-auto max-w-3xl text-lg text-waterloo dark:text-manatee">
-            Passionnée par mon métier, je mets mon expertise et mon engagement au service 
+          <p className="mx-auto max-w-3xl text-lg text-beigetextlight dark:text-manatee">
+            Passionnée par mon métier, je mets mon expertise et mon engagement au service
             de vos projets pour vous offrir des solutions sur-mesure.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="flex flex-col items-center gap-12 lg:flex-row xl:gap-25">
           {/* Left: Image & Profile */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative w-full lg:w-[calc(50%-50px)]"
           >
             {/* Main Profile Card */}
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/90 via-white/50 to-white/30 p-8 shadow-2xl ring-1 ring-black/5 backdrop-blur-xl dark:from-blacksection/90 dark:via-blacksection/50 dark:to-blacksection/30 dark:ring-white/10">
-              
+            <div className="relative overflow-hidden rounded-3xl bg-white border border-stroke p-8 shadow-solid-1 transition-all hover:border-primary/50 hover:shadow-solid-7 dark:bg-blacksection dark:border-white/10 xl:p-10">
+
               {/* Profile Image */}
               <div className="relative mb-6 overflow-hidden rounded-2xl">
-                <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-primary/10 via-pink-50/30 to-purple-50/20">
+                <div className="relative aspect-[4/5] overflow-hidden bg-black border border-primary/20">
                   <Image
                     src="/assets/images/profile.jpg"
                     alt="Courtière Novantys Solutions"
@@ -115,25 +115,25 @@ const AboutCourtier = () => {
                     priority
                   />
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 </div>
                 {/* Decorative corner */}
-                <div className="absolute right-4 top-4 rounded-full bg-white/90 p-3 shadow-lg backdrop-blur-sm dark:bg-black/90">
+                <div className="absolute right-4 top-4 rounded-full bg-black border border-primary/30 p-3 shadow-lg backdrop-blur-sm">
                   <Award className="h-6 w-6 text-primary" />
                 </div>
               </div>
 
               {/* Profile Info */}
               <div className="relative">
-                <h3 className="mb-2 text-2xl font-bold text-black dark:text-white">
+                <h3 className="mb-2 text-2xl font-bold text-beigetext dark:text-white">
                   Votre Courtière
                 </h3>
-                <p className="mb-4 font-medium text-primary">
+                <p className="mb-4 font-bold text-primary">
                   Experte en Assurance & Financement
                 </p>
-                <p className="mb-6 text-base leading-relaxed text-waterloo dark:text-manatee">
-                  Avec plus de 25 ans d'expérience, je suis à vos côtés pour vous accompagner 
-                  dans tous vos projets d'assurance et de financement. Mon approche personnalisée 
+                <p className="mb-6 text-base leading-relaxed text-beigetextlight dark:text-manatee">
+                  Avec plus de 25 ans d'expérience, je suis à vos côtés pour vous accompagner
+                  dans tous vos projets d'assurance et de financement. Mon approche personnalisée
                   et humaine fait toute la différence.
                 </p>
 
@@ -142,31 +142,31 @@ const AboutCourtier = () => {
                   <motion.a
                     href="/contact"
                     whileHover={{ scale: 1.02 }}
-                    className="flex items-center gap-3 rounded-xl bg-gradient-to-r from-primary to-amber-500 p-4 text-white shadow-lg transition-all hover:shadow-xl"
+                    className="flex items-center gap-3 rounded-xl gradient-primary p-4 text-black shadow-lg transition-all hover:shadow-xl"
                   >
                     <Calendar className="h-5 w-5" />
                     <div>
-                      <p className="text-sm font-medium">Prendre Rendez-vous</p>
-                      <p className="text-xs opacity-90">Consultation gratuite</p>
+                      <p className="text-sm font-bold">Prendre Rendez-vous</p>
+                      <p className="text-xs font-semibold opacity-90">Consultation gratuite</p>
                     </div>
                   </motion.a>
-                  
+
                   <div className="grid grid-cols-2 gap-3">
                     <motion.a
                       href="tel:+33637764190"
                       whileHover={{ scale: 1.05 }}
-                      className="flex items-center gap-2 rounded-xl bg-white p-3 shadow-sm ring-1 ring-black/5 transition-all hover:shadow-md dark:bg-blacksection dark:ring-white/10"
+                      className="flex items-center gap-2 rounded-xl bg-white border border-stroke p-3 shadow-sm transition-all hover:border-primary/50 dark:bg-black dark:border-white/10"
                     >
                       <Phone className="h-4 w-4 text-primary" />
-                      <span className="text-xs font-medium text-black dark:text-white">Appeler</span>
+                      <span className="text-xs font-bold text-beigetext dark:text-white">Appeler</span>
                     </motion.a>
                     <motion.a
                       href="mailto:contact@novantys.fr"
                       whileHover={{ scale: 1.05 }}
-                      className="flex items-center gap-2 rounded-xl bg-white p-3 shadow-sm ring-1 ring-black/5 transition-all hover:shadow-md dark:bg-blacksection dark:ring-white/10"
+                      className="flex items-center gap-2 rounded-xl bg-white border border-stroke p-3 shadow-sm transition-all hover:border-primary/50 dark:bg-black dark:border-white/10"
                     >
                       <Mail className="h-4 w-4 text-primary" />
-                      <span className="text-xs font-medium text-black dark:text-white">Email</span>
+                      <span className="text-xs font-bold text-beigetext dark:text-white">Email</span>
                     </motion.a>
                   </div>
                 </div>
@@ -175,7 +175,7 @@ const AboutCourtier = () => {
 
             {/* Floating decoration */}
             <motion.div
-              className="absolute -right-6 top-1/3 h-24 w-24 rounded-full bg-gradient-to-br from-pink-200/40 to-purple-200/40 blur-2xl"
+              className="absolute -right-6 top-1/3 h-24 w-24 rounded-full bg-primary/10 blur-2xl"
               animate={{
                 y: [0, -20, 0],
                 scale: [1, 1.2, 1],
@@ -189,7 +189,7 @@ const AboutCourtier = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-8"
+            className="w-full space-y-8 lg:w-[calc(50%-50px)]"
           >
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4">
@@ -200,15 +200,15 @@ const AboutCourtier = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-black/5 transition-all hover:shadow-xl dark:bg-blacksection dark:ring-white/10"
+                  className="group relative overflow-hidden rounded-2xl bg-white border border-stroke p-6 shadow-md transition-all hover:border-primary/50 dark:bg-blacksection dark:border-white/10"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-pink-50/30 to-purple-50/20 opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                   <div className="relative">
                     <stat.icon className="mb-3 h-8 w-8 text-primary" strokeWidth={1.5} />
-                    <p className="mb-1 text-3xl font-bold text-black dark:text-white">
+                    <p className="mb-1 text-3xl font-bold text-beigetext dark:text-white">
                       {stat.value}
                     </p>
-                    <p className="text-sm font-medium text-waterloo dark:text-manatee">
+                    <p className="text-sm font-bold text-beigetextlight dark:text-manatee">
                       {stat.label}
                     </p>
                   </div>
@@ -218,7 +218,7 @@ const AboutCourtier = () => {
 
             {/* Values Cards */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-black dark:text-white">
+              <h3 className="text-xl font-bold text-beigetext dark:text-white">
                 Mes Valeurs
               </h3>
               {values.map((value, index) => (
@@ -228,18 +228,18 @@ const AboutCourtier = () => {
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                   whileHover={{ x: 10 }}
-                  className="group relative overflow-hidden rounded-xl bg-white p-6 shadow-md ring-1 ring-black/5 transition-all hover:shadow-lg dark:bg-blacksection dark:ring-white/10"
+                  className="group relative overflow-hidden rounded-xl bg-white border border-stroke p-6 shadow-sm transition-all hover:border-primary/50 dark:bg-blacksection dark:border-white/10"
                 >
-                  <div className={`absolute left-0 top-0 h-full w-1 bg-gradient-to-b ${value.gradient}`} />
+                  <div className={`absolute left-0 top-0 h-full w-1 bg-primary`} />
                   <div className="flex items-start gap-4">
-                    <div className={`rounded-lg bg-gradient-to-br ${value.gradient} p-3`}>
-                      <value.icon className="h-6 w-6 text-white" strokeWidth={2} />
+                    <div className={`rounded-lg bg-primary/10 p-3`}>
+                      <value.icon className="h-6 w-6 text-primary" strokeWidth={2} />
                     </div>
                     <div className="flex-1">
-                      <h4 className="mb-2 font-semibold text-black dark:text-white">
+                      <h4 className="mb-2 font-bold text-beigetext dark:text-white">
                         {value.title}
                       </h4>
-                      <p className="text-sm text-waterloo dark:text-manatee">
+                      <p className="text-sm text-beigetextlight dark:text-manatee">
                         {value.description}
                       </p>
                     </div>
@@ -253,17 +253,17 @@ const AboutCourtier = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 1.2 }}
-              className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 via-pink-50/50 to-purple-50/30 p-8 backdrop-blur-sm"
+              className="relative overflow-hidden rounded-2xl bg-beigesection border border-primary/20 p-8 shadow-inner dark:bg-black"
             >
-              <Sparkles className="absolute right-4 top-4 h-12 w-12 text-primary/20" />
+              <Sparkles className="absolute right-4 top-4 h-12 w-12 text-primary/10" />
               <blockquote className="relative">
-                <p className="mb-4 text-lg font-medium italic leading-relaxed text-black dark:text-white">
-                  "Mon engagement : vous offrir un service d'excellence avec une approche 
+                <p className="mb-4 text-lg font-bold italic leading-relaxed text-beigetext dark:text-white">
+                  "Mon engagement : vous offrir un service d'excellence avec une approche
                   personnalisée et bienveillante pour protéger ce qui compte vraiment pour vous."
                 </p>
                 <div className="flex items-center gap-2">
-                  <div className="h-1 w-12 bg-gradient-to-r from-primary to-pink-400" />
-                  <p className="font-semibold text-primary">Votre Courtière, Novantys Solutions</p>
+                  <div className="h-1 w-12 bg-primary" />
+                  <p className="font-bold text-primary">Votre Courtière, Novantys Solutions</p>
                 </div>
               </blockquote>
             </motion.div>

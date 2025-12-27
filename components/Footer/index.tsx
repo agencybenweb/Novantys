@@ -2,16 +2,65 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { useMemo } from "react";
 import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram, Twitter, Heart } from "lucide-react";
 
 const Footer = () => {
+  // Deterministic particles for "magical dust" effect
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 30 }).map((_, i) => {
+        const left = (i * 37) % 100;
+        const top = (i * 53) % 100;
+        const size = 2 + ((i * 3) % 4);
+        const xShift = ((i * 7) % 20) - 10;
+        const delay = (i % 5) * 0.6;
+        const duration = 4 + (i % 4);
+        const color =
+          i % 3 === 0
+            ? "rgba(212, 175, 55, 0.4)" // Or plus visible
+            : i % 3 === 1
+              ? "rgba(255, 192, 203, 0.4)" // Rose
+              : "rgba(147, 51, 234, 0.4)"; // Violet
+        return { left, top, size, xShift, delay, duration, color, id: i };
+      }),
+    []
+  );
+
   return (
     <>
-      <footer className="relative overflow-hidden border-t border-stroke bg-gradient-to-b from-white to-alabaster dark:border-strokedark dark:from-blacksection dark:to-black">
-        {/* Decorative Background */}
-        <div className="absolute inset-0 -z-1">
+      <footer className="relative overflow-hidden border-t border-primary/20 bg-white/80 backdrop-blur-xl shadow-solid-5 transition-colors duration-300 dark:bg-black/90">
+        {/* Decorative Background & Particles */}
+        <div className="absolute inset-0 -z-1 overflow-hidden">
           <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-primary/5 to-transparent" />
-          <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-purple-100/10 to-transparent dark:from-purple-900/10" />
+          <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-primary/5 to-transparent" />
+
+          {/* Floating Elegant Particles */}
+          {particles.map((p) => (
+            <motion.div
+              key={p.id}
+              className="absolute rounded-full"
+              style={{
+                left: `${p.left}%`,
+                top: `${p.top}%`,
+                width: `${p.size}px`,
+                height: `${p.size}px`,
+                background: p.color,
+              }}
+              animate={{
+                y: [0, -40, 0],
+                x: [0, p.xShift, 0],
+                opacity: [0.2, 0.8, 0.2],
+                scale: [1, 1.5, 1],
+              }}
+              transition={{
+                duration: p.duration,
+                repeat: Infinity,
+                delay: p.delay,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
         </div>
 
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
@@ -36,7 +85,7 @@ const Footer = () => {
                 className="animate_top w-full lg:w-1/3"
               >
                 <Link href="/" className="relative">
-                  <motion.div 
+                  <motion.div
                     className="mb-6 flex items-center gap-3"
                     whileHover={{ scale: 1.02 }}
                   >
@@ -46,23 +95,15 @@ const Footer = () => {
                         alt="Novantys Solutions"
                         width={180}
                         height={56}
-                        className="h-12 w-auto dark:hidden"
-                        priority
-                      />
-                      <Image
-                        src="/assets/images/logo-noir-removebg-preview.png"
-                        alt="Novantys Solutions"
-                        width={180}
-                        height={56}
-                        className="hidden h-12 w-auto dark:block"
+                        className="h-12 w-auto"
                         priority
                       />
                     </div>
                   </motion.div>
                 </Link>
 
-                <p className="mb-8 text-base leading-relaxed text-waterloo dark:text-manatee">
-                  Votre partenaire de confiance en assurance et financement. 
+                <p className="mb-8 text-base leading-relaxed text-beigetextlight dark:text-manatee">
+                  Votre partenaire de confiance en assurance et financement.
                   Un accompagnement premium, humain et expert pour tous vos projets de vie.
                 </p>
 
@@ -71,7 +112,7 @@ const Footer = () => {
                   <motion.a
                     href="mailto:contact@novantys-solutions.fr"
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 text-black transition-colors hover:text-primary dark:text-white"
+                    className="flex items-center gap-3 text-beigetext transition-colors hover:text-primary dark:text-white"
                   >
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
                       <Mail className="h-5 w-5 text-primary" />
@@ -82,7 +123,7 @@ const Footer = () => {
                   <motion.a
                     href="tel:+33637764190"
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 text-black transition-colors hover:text-primary dark:text-white"
+                    className="flex items-center gap-3 text-beigetext transition-colors hover:text-primary dark:text-white"
                   >
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
                       <Phone className="h-5 w-5 text-primary" />
@@ -92,7 +133,7 @@ const Footer = () => {
 
                   <motion.div
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 text-black dark:text-white"
+                    className="flex items-center gap-3 text-beigetext dark:text-white"
                   >
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
                       <MapPin className="h-5 w-5 text-primary" />
@@ -120,7 +161,7 @@ const Footer = () => {
                   viewport={{ once: true }}
                   className="animate_top"
                 >
-                  <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
+                  <h4 className="mb-9 text-itemtitle2 font-medium text-beigetext dark:text-white">
                     Particuliers
                   </h4>
 
@@ -128,7 +169,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/simulateur-per"
-                        className="mb-3 inline-block hover:text-primary"
+                        className="mb-3 inline-block text-beigetextlight hover:text-primary dark:text-manatee dark:hover:text-primary"
                       >
                         Plan Épargne Retraite
                       </Link>
@@ -136,7 +177,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/assurance-pret"
-                        className="mb-3 inline-block hover:text-primary"
+                        className="mb-3 inline-block text-beigetextlight hover:text-primary dark:text-manatee dark:hover:text-primary"
                       >
                         Assurance de Prêt
                       </Link>
@@ -144,7 +185,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/complementaire-sante"
-                        className="mb-3 inline-block hover:text-primary"
+                        className="mb-3 inline-block text-beigetextlight hover:text-primary dark:text-manatee dark:hover:text-primary"
                       >
                         Complémentaire Santé
                       </Link>
@@ -169,7 +210,7 @@ const Footer = () => {
                   viewport={{ once: true }}
                   className="animate_top"
                 >
-                  <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
+                  <h4 className="mb-9 text-itemtitle2 font-medium text-beigetext dark:text-white">
                     Professionnels
                   </h4>
 
@@ -177,7 +218,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/travailleurs-non-salaries"
-                        className="mb-3 inline-block hover:text-primary"
+                        className="mb-3 inline-block text-beigetextlight hover:text-primary dark:text-manatee dark:hover:text-primary"
                       >
                         Assurance & Prévoyance TNS
                       </Link>
@@ -185,7 +226,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/rc-pro"
-                        className="mb-3 inline-block hover:text-primary"
+                        className="mb-3 inline-block text-beigetextlight hover:text-primary dark:text-manatee dark:hover:text-primary"
                       >
                         RC Professionnelle
                       </Link>
@@ -193,7 +234,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/partenaire-empruntis"
-                        className="mb-3 inline-block hover:text-primary"
+                        className="mb-3 inline-block text-beigetextlight hover:text-primary dark:text-manatee dark:hover:text-primary"
                       >
                         Partenaire EMPRUNTIS
                       </Link>
@@ -218,7 +259,7 @@ const Footer = () => {
                   viewport={{ once: true }}
                   className="animate_top"
                 >
-                  <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
+                  <h4 className="mb-9 text-itemtitle2 font-medium text-beigetext dark:text-white">
                     Informations
                   </h4>
 
@@ -226,7 +267,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/about"
-                        className="mb-3 inline-block hover:text-primary"
+                        className="mb-3 inline-block text-beigetextlight hover:text-primary dark:text-manatee dark:hover:text-primary"
                       >
                         Qui Sommes Nous
                       </Link>
@@ -234,7 +275,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/contact"
-                        className="mb-3 inline-block hover:text-primary"
+                        className="mb-3 inline-block text-beigetextlight hover:text-primary dark:text-manatee dark:hover:text-primary"
                       >
                         Contact
                       </Link>
@@ -242,7 +283,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/mentions-legales"
-                        className="mb-3 inline-block hover:text-primary"
+                        className="mb-3 inline-block text-beigetextlight hover:text-primary dark:text-manatee dark:hover:text-primary"
                       >
                         Mentions Légales
                       </Link>
@@ -250,7 +291,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/politique-confidentialite"
-                        className="mb-3 inline-block hover:text-primary"
+                        className="mb-3 inline-block text-beigetextlight hover:text-primary dark:text-manatee dark:hover:text-primary"
                       >
                         Politique de Confidentialité
                       </Link>
@@ -263,7 +304,7 @@ const Footer = () => {
           {/* Footer Top */}
 
           {/* Footer Bottom */}
-          <div className="border-t border-stroke py-8 dark:border-strokedark">
+          <div className="border-t border-white/10 py-8">
             <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
               <motion.div
                 variants={{
@@ -280,7 +321,7 @@ const Footer = () => {
                 whileInView="visible"
                 transition={{ duration: 1, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="animate_top flex items-center gap-2 text-waterloo dark:text-manatee"
+                className="animate_top flex items-center gap-2 text-beigetextlight dark:text-manatee"
               >
                 <p>
                   &copy; {new Date().getFullYear()} Novantys Solutions. Fait avec
@@ -308,7 +349,7 @@ const Footer = () => {
                 className="animate_top"
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-sm font-medium text-waterloo dark:text-manatee">
+                  <span className="text-sm font-medium text-beigetextlight dark:text-manatee">
                     Suivez-nous :
                   </span>
                   <div className="flex gap-3">
@@ -353,19 +394,19 @@ const Footer = () => {
               >
                 <Link
                   href="/mentions-legales"
-                  className="text-waterloo transition-colors hover:text-primary dark:text-manatee"
+                  className="text-beigetextlight transition-colors hover:text-primary dark:text-manatee"
                 >
                   Mentions Légales
                 </Link>
                 <Link
                   href="/politique-confidentialite"
-                  className="text-waterloo transition-colors hover:text-primary dark:text-manatee"
+                  className="text-beigetextlight transition-colors hover:text-primary dark:text-manatee"
                 >
                   Confidentialité
                 </Link>
                 <Link
                   href="/cgv"
-                  className="text-waterloo transition-colors hover:text-primary dark:text-manatee"
+                  className="text-beigetextlight transition-colors hover:text-primary dark:text-manatee"
                 >
                   CGV
                 </Link>
