@@ -43,7 +43,7 @@ const Header = () => {
     <header
       className={`fixed left-0 top-0 z-99999 w-full transition-all duration-300 ${stickyMenu
         ? "bg-beigeluxe/90 py-4 shadow-solid-5 backdrop-blur-xl border-b border-primary/20 dark:bg-black/90"
-        : "py-7 bg-transparent"
+        : "py-4 bg-beigeluxe/95 backdrop-blur-md border-b border-primary/10 shadow-sm xl:py-7 xl:bg-transparent xl:border-none xl:shadow-none"
         }`}
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
