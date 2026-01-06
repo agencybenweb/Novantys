@@ -36,7 +36,7 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
       </head>
-      <body className={`bg-beigeluxe text-beigetext transition-colors duration-300 dark:bg-black dark:text-manatee ${inter.className}`}>
+      <body className={`bg-beigeluxe text-beigetext transition-colors duration-300 dark:bg-black dark:text-manatee overflow-x-hidden ${inter.className}`}>
         <Providers>
           <Lines />
           <Header />
