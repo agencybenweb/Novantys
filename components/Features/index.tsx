@@ -39,7 +39,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-beigesection py-20 transition-colors duration-300 dark:bg-blacksection lg:py-25 xl:py-30">
+    <section className="relative overflow-hidden bg-beigesection py-20 lg:py-25 xl:py-30">
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-1">
         <motion.div
@@ -74,13 +74,13 @@ const Features = () => {
             <span className="text-sm font-medium text-primary">Nos Avantages</span>
           </div>
 
-          <h2 className="mb-4 text-3xl font-bold text-beigetext dark:text-white xl:text-sectiontitle3">
+          <h2 className="mb-4 text-3xl font-bold !text-black xl:text-sectiontitle3">
             Pourquoi Choisir{" "}
             <span className="bg-gradient-to-r from-primary via-amber-600 to-primary bg-clip-text text-transparent">
               Novantys ?
             </span>
           </h2>
-          <p className="mx-auto max-w-3xl text-lg text-beigetextlight dark:text-manatee">
+          <p className="mx-auto max-w-3xl text-lg !text-black/80">
             Une approche premium qui fait toute la différence pour votre protection et votre avenir
           </p>
         </motion.div>
@@ -97,11 +97,11 @@ const Features = () => {
               whileHover={{ y: -8 }}
               className="group w-full md:w-[calc(50%-1rem)] max-w-[580px]"
             >
-              <div className="relative h-full overflow-hidden rounded-3xl bg-white border border-primary/10 p-8 shadow-solid-1 transition-all hover:border-primary/50 hover:shadow-solid-7 dark:bg-titlebg2 dark:border-white/5">
+              <div className="relative h-full overflow-hidden rounded-3xl bg-white border border-beigeborder p-8 shadow-solid-1 transition-all hover:border-primary/50 hover:shadow-solid-7">
                 {/* Icon & Title */}
                 <div className="mb-6 flex items-start gap-4">
                   <motion.div
-                    className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-white border border-primary/10 shadow-md transition-shadow group-hover:shadow-primary/20`}
+                    className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-white border border-beigeborder shadow-md transition-shadow group-hover:shadow-primary/20`}
                     whileHover={{
                       scale: 1.1,
                       rotate: [0, -10, 10, -10, 0],
@@ -111,10 +111,10 @@ const Features = () => {
                     <feature.icon className="h-8 w-8 text-primary" strokeWidth={2} />
                   </motion.div>
                   <div className="flex-1">
-                    <h3 className="mb-2 text-xl font-bold text-beigetext dark:text-white">
+                    <h3 className="mb-2 text-xl font-bold !text-black">
                       {feature.title}
                     </h3>
-                    <p className="text-base text-beigetextlight dark:text-manatee">
+                    <p className="text-base !text-black/70">
                       {feature.description}
                     </p>
                   </div>
@@ -132,7 +132,7 @@ const Features = () => {
                       className="flex items-center gap-3"
                     >
                       <CheckCircle2 className={`h-5 w-5 text-primary`} />
-                      <span className="text-sm font-bold text-beigetext dark:text-manatee">
+                      <span className="text-sm font-bold !text-black/80">
                         {benefit}
                       </span>
                     </motion.div>
@@ -148,4 +148,3 @@ const Features = () => {
 };
 
 export default Features;
-

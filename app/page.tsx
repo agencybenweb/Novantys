@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 import Hero from "@/components/Hero";
 import Mission from "@/components/Mission";
 import Services from "@/components/Services";
@@ -31,13 +32,19 @@ export default function Home() {
         <div className="absolute bottom-1/4 right-1/4 h-[500px] w-[500px] rounded-full bg-white/5 blur-[100px]" />
 
         {/* Floating white micro-particles for luxury feel */}
-        {[...Array(15)].map((_, i) => (
+        {/* Floating white micro-particles for luxury feel */}
+        {useMemo(() => [...Array(15)].map((_, i) => ({
+          top: `${(i * 17) % 100}%`,
+          left: `${(i * 23) % 100}%`,
+          duration: 3 + (i % 5),
+          delay: (i % 10)
+        })), []).map((p, i) => (
           <motion.div
             key={i}
             className="absolute h-1 w-1 rounded-full bg-white/20"
             initial={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
+              top: p.top,
+              left: p.left,
               opacity: 0,
               scale: 0
             }}
@@ -47,9 +54,9 @@ export default function Home() {
               y: [0, -30, 0]
             }}
             transition={{
-              duration: 3 + Math.random() * 5,
+              duration: p.duration,
               repeat: Infinity,
-              delay: Math.random() * 10
+              delay: p.delay
             }}
           />
         ))}
@@ -80,3 +87,4 @@ export default function Home() {
     </main>
   );
 }
+

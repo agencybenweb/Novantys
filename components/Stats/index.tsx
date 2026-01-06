@@ -84,7 +84,7 @@ const Stats = () => {
   ];
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-blacksection py-20 lg:py-25 xl:py-30">
+    <section ref={ref} className="relative overflow-hidden bg-white transition-colors duration-300 py-20 dark:bg-blacksection lg:py-25 xl:py-30">
       {/* Decorative Background */}
       <div className="absolute inset-0 -z-1">
         <motion.div
@@ -113,13 +113,13 @@ const Stats = () => {
           transition={{ duration: 0.6 }}
           className="mx-auto mb-16 text-center"
         >
-          <h2 className="mb-4 text-3xl font-bold text-white xl:text-sectiontitle3">
+          <h2 className="mb-4 text-3xl font-bold text-beigetext dark:text-white xl:text-sectiontitle3">
             Des Chiffres qui{" "}
             <span className="bg-gradient-to-r from-primary via-goldlight to-primary bg-clip-text text-transparent">
               Parlent d'Eux-Mêmes
             </span>
           </h2>
-          <p className="mx-auto max-w-3xl text-lg text-manatee">
+          <p className="mx-auto max-w-3xl text-lg text-beigetextlight dark:text-manatee">
             Notre réussite se mesure à travers la confiance que vous nous accordez
           </p>
         </motion.div>
@@ -135,7 +135,7 @@ const Stats = () => {
               whileHover={{ y: -10 }}
               className="group relative w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] max-w-[300px]"
             >
-              <div className="relative h-full overflow-hidden rounded-3xl bg-black border border-white/10 p-8 shadow-solid-5 transition-all hover:border-primary/50">
+              <div className="relative h-full overflow-hidden rounded-3xl bg-beigeluxe border border-beigeborder p-8 shadow-solid-5 transition-all hover:border-primary/50 dark:bg-black dark:border-white/10">
                 {/* Gradient Background on Hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100`} />
 
@@ -143,7 +143,7 @@ const Stats = () => {
                 <div className="relative">
                   {/* Icon */}
                   <motion.div
-                    className={`mb-6 inline-flex rounded-2xl bg-black border border-primary/20 p-4 shadow-lg`}
+                    className={`mb-6 inline-flex rounded-2xl bg-white border border-beigeborder p-4 shadow-lg dark:bg-black dark:border-primary/20`}
                     whileHover={{
                       scale: 1.1,
                       rotate: [0, -5, 5, -5, 0],
@@ -156,7 +156,7 @@ const Stats = () => {
                   {/* Number */}
                   <div className="mb-3">
                     <motion.h3
-                      className={`text-5xl font-extrabold text-white`}
+                      className={`text-5xl font-extrabold text-beigetext dark:text-white`}
                     >
                       <AnimatedCounter value={stat.value} />
                       <span className="text-primary">{stat.suffix}</span>
@@ -164,12 +164,12 @@ const Stats = () => {
                   </div>
 
                   {/* Label */}
-                  <h4 className="mb-3 text-lg font-bold text-white">
+                  <h4 className="mb-3 text-lg font-bold text-beigetext dark:text-white">
                     {stat.label}
                   </h4>
 
                   {/* Description */}
-                  <p className="text-sm leading-relaxed text-manatee">
+                  <p className="text-sm leading-relaxed text-beigetextlight dark:text-manatee">
                     {stat.description}
                   </p>
                 </div>
@@ -183,13 +183,13 @@ const Stats = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="relative overflow-hidden rounded-3xl bg-black border border-white/10 p-8 shadow-lg"
+          className="relative overflow-hidden rounded-3xl bg-beigesection border border-beigeborder p-8 shadow-lg dark:bg-black dark:border-white/10"
         >
           {/* Decorative Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-primary/10 to-transparent" />
 
           <div className="relative">
-            <h3 className="mb-8 text-center text-2xl font-bold text-white">
+            <h3 className="mb-8 text-center text-2xl font-bold text-beigetext dark:text-white">
               Nos Garanties & Certifications
             </h3>
 
@@ -201,12 +201,12 @@ const Stats = () => {
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="flex flex-col items-center gap-3 rounded-2xl bg-blacksection border border-white/10 p-6 text-center shadow-sm transition-all hover:border-primary/50"
+                  className="flex flex-col items-center gap-3 rounded-2xl bg-white border border-beigeborder p-6 text-center shadow-sm transition-all hover:border-primary/50 dark:bg-blacksection dark:border-white/10"
                 >
                   <div className="rounded-xl bg-primary/10 p-3">
                     <cert.icon className="h-6 w-6 text-primary" strokeWidth={2} />
                   </div>
-                  <span className="text-sm font-semibold text-white">
+                  <span className="text-sm font-semibold text-beigetext dark:text-white">
                     {cert.text}
                   </span>
                 </motion.div>
@@ -220,5 +220,3 @@ const Stats = () => {
 };
 
 export default Stats;
-
-

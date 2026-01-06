@@ -96,31 +96,9 @@ const Services = () => {
   const filteredServices = services.filter(s => activeTab === "particulier" ? s.segment === "particulier" : s.segment === "pro");
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-beigeluxe transition-colors duration-300 py-20 dark:bg-black lg:py-25 xl:py-30" id="services">
-      {/* Premium Animated background */}
-      <div className="absolute inset-0 -z-1">
-        <motion.div
-          className="absolute left-1/4 top-0 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-primary/10 via-amber-200/5 to-transparent blur-[100px] opacity-50"
-          animate={{
-            y: [0, 50, 0],
-            scale: [1, 1.1, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{ duration: 15, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute right-1/4 bottom-0 h-[500px] w-[500px] rounded-full bg-gradient-to-tl from-blue-900/10 via-primary/5 to-transparent blur-[100px] opacity-50"
-          animate={{
-            y: [0, -50, 0],
-            scale: [1.1, 1, 1.1],
-            opacity: [0.1, 0.3, 0.1],
-          }}
-          transition={{ duration: 18, repeat: Infinity }}
-        />
-      </div>
+    <section ref={ref} className="relative overflow-hidden bg-[#EAE3D2] py-20 lg:py-25 xl:py-30" id="services">
 
       <motion.div
-        style={{ scale }}
         className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0"
       >
         {/* Section Title */}
@@ -141,7 +119,8 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="mx-auto mb-4 text-3xl font-bold text-beigetext dark:text-white md:w-4/5 xl:w-1/2 xl:text-sectiontitle3"
+            className="mx-auto mb-4 text-3xl font-bold !text-black md:w-4/5 xl:w-1/2 xl:text-sectiontitle3"
+            style={{ color: 'black' }}
           >
             Des Services d'
             <span className="bg-gradient-to-r from-primary via-goldlight to-primary bg-clip-text text-transparent">
@@ -153,14 +132,14 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mx-auto mb-16 text-lg text-beigetextlight dark:text-manatee md:w-4/5 xl:w-1/2"
+            className="mx-auto mb-16 text-lg text-black/80 md:w-4/5 xl:w-1/2"
           >
             Une expertise reconnue dans quatre domaines clés pour protéger ce qui compte vraiment pour vous
           </motion.p>
         </div>
 
         {/* Tabs Particulier / Pro */}
-        <div className="mb-12 flex flex-wrap justify-center gap-4">
+        <div className="mb-12 flex flex-wrap justify-center gap-4 relative z-20">
           {[
             { key: "particulier", label: "Pour les Particuliers", icon: User, count: services.filter(s => s.segment === "particulier").length },
             { key: "pro", label: "Pour les Professionnels", icon: Briefcase, count: services.filter(s => s.segment === "pro").length },
@@ -170,14 +149,14 @@ const Services = () => {
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => setActiveTab(tab.key as "particulier" | "pro")}
-              className={`group inline-flex items-center gap-3 rounded-full border-2 px-5 py-3 text-sm font-semibold transition-all backdrop-blur-sm ${activeTab === tab.key
+              className={`group inline-flex items-center gap-3 rounded-full border-2 px-5 py-3 text-sm font-semibold transition-all backdrop-blur-sm cursor-pointer ${activeTab === tab.key
                 ? "border-primary bg-primary/10 text-primary shadow-lg"
-                : "border-beigeborder bg-white/80 text-beigetext shadow-sm hover:border-primary/50 hover:text-primary dark:border-stroke dark:bg-blacksection/80 dark:text-white"
+                : "border-beigeborder bg-white/80 text-beigetext shadow-sm hover:border-primary/50 hover:text-primary"
                 }`}
             >
               <tab.icon className="h-4 w-4" />
               <span>{tab.label}</span>
-              <span className="rounded-full bg-beigeborder/50 px-2 py-0.5 text-xs font-bold text-beigetext dark:bg-white/10 dark:text-white group-hover:bg-primary/10 group-hover:text-primary">
+              <span className="rounded-full bg-beigeborder/50 px-2 py-0.5 text-xs font-bold text-beigetext group-hover:bg-primary/10 group-hover:text-primary">
                 {tab.count}
               </span>
             </motion.button>
@@ -185,7 +164,7 @@ const Services = () => {
         </div>
 
         {/* Premium Services Grid */}
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-8 relative z-10">
           {filteredServices.map((service, index) => {
             // Nuances de couleurs par service
             let accentColorClass = "text-primary";
@@ -221,7 +200,7 @@ const Services = () => {
                 className="animate_top group w-full md:w-[calc(50%-1rem)] max-w-[580px]"
               >
                 <Link href={service.link}>
-                  <div className={`relative h-full overflow-hidden rounded-2xl bg-white border border-beigeborder p-8 shadow-solid-5 transition-all hover:border-opacity-50 dark:bg-blacksection dark:border-stroke ${borderColorClass.replace('/20', '/50')} xl:p-10`}>
+                  <div className={`relative h-full overflow-hidden rounded-2xl bg-white border border-beigeborder p-8 shadow-solid-5 transition-all hover:border-opacity-50 ${borderColorClass.replace('/20', '/50')} xl:p-10`}>
                     {/* Gradient Background on Hover with subtle color */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${bgGradientClass} opacity-0 transition-opacity duration-500 group-hover:opacity-20`} />
 
@@ -231,7 +210,7 @@ const Services = () => {
                       <div className="mb-6 flex items-start justify-between">
                         <div className="flex items-center gap-4">
                           <motion.div
-                            className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-beigeluxe border border-beigeborder dark:bg-black dark:border-stroke shadow-lg`}
+                            className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-beigeluxe border border-beigeborder shadow-lg`}
                             whileHover={{
                               scale: 1.1,
                               rotate: [0, -10, 10, -10, 0],
@@ -241,14 +220,14 @@ const Services = () => {
                             <service.icon className={`h-8 w-8 ${accentColorClass}`} strokeWidth={1.5} />
                           </motion.div>
                           <div>
-                            <h4 className="text-xl font-bold text-beigetext dark:text-white xl:text-itemtitle">
+                            <h4 className="text-xl font-bold text-black xl:text-itemtitle">
                               {service.title}
                             </h4>
                           </div>
                         </div>
 
                         <motion.div
-                          className={`rounded-full bg-beigeluxe border border-beigeborder dark:bg-black dark:border-stroke p-2 shadow-sm`}
+                          className={`rounded-full bg-beigeluxe border border-beigeborder p-2 shadow-sm`}
                           whileHover={{ scale: 1.2, rotate: 45 }}
                         >
                           <ArrowRight className={`h-5 w-5 ${accentColorClass}`} />
@@ -256,7 +235,7 @@ const Services = () => {
                       </div>
 
                       {/* Description */}
-                      <p className="mb-6 text-base leading-relaxed text-beigetextlight dark:text-manatee">
+                      <p className="mb-6 text-base leading-relaxed text-black/70">
                         {service.description}
                       </p>
 
@@ -272,7 +251,7 @@ const Services = () => {
                             className="flex items-center gap-2"
                           >
                             <CheckCircle2 className={`h-5 w-5 ${accentColorClass}`} />
-                            <span className="text-sm font-medium text-beigetext dark:text-white">
+                            <span className="text-sm font-medium text-black/80">
                               {feature}
                             </span>
                           </motion.div>
@@ -307,20 +286,20 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
-          className="animate_top mx-auto mt-16 max-w-4xl overflow-hidden rounded-3xl bg-white border border-beigeborder p-10 shadow-lg dark:bg-blacksection dark:border-stroke"
+          className="animate_top mx-auto mt-16 max-w-4xl overflow-hidden rounded-3xl bg-white border border-beigeborder p-10 shadow-lg"
         >
           {/* Decorative Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-primary/10 to-transparent" />
 
           <div className="relative text-center">
             <Sparkles className="mx-auto mb-4 h-12 w-12 text-primary" />
-            <h4 className="mb-4 text-2xl font-bold text-beigetext dark:text-white">
+            <h4 className="mb-4 text-2xl font-bold !text-black" style={{ color: 'black' }}>
               Une Approche{" "}
               <span className="bg-gradient-to-r from-primary via-goldlight to-primary bg-clip-text text-transparent">
                 Sur-Mesure
               </span>
             </h4>
-            <p className="mb-6 text-base leading-relaxed text-beigetextlight dark:text-manatee">
+            <p className="mb-6 text-base leading-relaxed text-black">
               Nous avons structuré nos services pour répondre précisément aux besoins de chaque profil.
               Notre partenariat avec EMPRUNTIS et nos compagnies d'assurance de référence nous permet
               de vous offrir des solutions complètes, personnalisées et toujours au meilleur prix.

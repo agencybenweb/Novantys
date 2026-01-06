@@ -47,7 +47,7 @@ const AboutCourtier = () => {
   ];
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-white py-20 transition-colors duration-300 dark:bg-black py-20 lg:py-25 xl:py-30">
+    <section ref={ref} className="relative overflow-hidden bg-beigeluxe py-20 lg:py-25 xl:py-30">
       {/* Decorative Background */}
       <div className="absolute inset-0 -z-1">
         <motion.div
@@ -80,13 +80,13 @@ const AboutCourtier = () => {
             <Sparkles className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-primary">Votre Courtière Experte</span>
           </div>
-          <h2 className="mb-4 text-3xl font-bold text-beigetext dark:text-white xl:text-sectiontitle3">
+          <h2 className="mb-4 text-3xl font-bold !text-black xl:text-sectiontitle3">
             Une Professionnelle à{" "}
             <span className="bg-gradient-to-r from-primary via-amber-600 to-primary bg-clip-text text-transparent">
               Votre Écoute
             </span>
           </h2>
-          <p className="mx-auto max-w-3xl text-lg text-beigetextlight dark:text-manatee">
+          <p className="mx-auto max-w-3xl text-lg !text-black/80">
             Passionnée par mon métier, je mets mon expertise et mon engagement au service
             de vos projets pour vous offrir des solutions sur-mesure.
           </p>
@@ -101,13 +101,13 @@ const AboutCourtier = () => {
             className="relative w-full lg:w-[calc(50%-50px)]"
           >
             {/* Main Profile Card */}
-            <div className="relative overflow-hidden rounded-3xl bg-white border border-stroke p-8 shadow-solid-1 transition-all hover:border-primary/50 hover:shadow-solid-7 dark:bg-blacksection dark:border-white/10 xl:p-10">
+            <div className="relative overflow-hidden rounded-3xl bg-white border border-beigeborder p-8 shadow-solid-1 transition-all hover:border-primary/50 hover:shadow-solid-7 xl:p-10">
 
               {/* Profile Image */}
               <div className="relative mb-6 overflow-hidden rounded-2xl">
                 <div className="relative aspect-[4/5] overflow-hidden bg-black border border-primary/20">
                   <Image
-                    src="/assets/images/profile.jpg"
+                    src="/assets/images/courtiere_profile_v2.png"
                     alt="Courtière Novantys Solutions"
                     fill
                     className="object-cover"
@@ -125,13 +125,13 @@ const AboutCourtier = () => {
 
               {/* Profile Info */}
               <div className="relative">
-                <h3 className="mb-2 text-2xl font-bold text-beigetext dark:text-white">
+                <h3 className="mb-2 text-2xl font-bold !text-black">
                   Votre Courtière
                 </h3>
                 <p className="mb-4 font-bold text-primary">
                   Experte en Assurance & Financement
                 </p>
-                <p className="mb-6 text-base leading-relaxed text-beigetextlight dark:text-manatee">
+                <p className="mb-6 text-base leading-relaxed !text-black/70">
                   Avec plus de 25 ans d'expérience, je suis à vos côtés pour vous accompagner
                   dans tous vos projets d'assurance et de financement. Mon approche personnalisée
                   et humaine fait toute la différence.
@@ -155,18 +155,18 @@ const AboutCourtier = () => {
                     <motion.a
                       href="tel:+33637764190"
                       whileHover={{ scale: 1.05 }}
-                      className="flex items-center gap-2 rounded-xl bg-white border border-stroke p-3 shadow-sm transition-all hover:border-primary/50 dark:bg-black dark:border-white/10"
+                      className="flex items-center gap-2 rounded-xl bg-white border border-beigeborder p-3 shadow-sm transition-all hover:border-primary/50"
                     >
                       <Phone className="h-4 w-4 text-primary" />
-                      <span className="text-xs font-bold text-beigetext dark:text-white">Appeler</span>
+                      <span className="text-xs font-bold !text-black">Appeler</span>
                     </motion.a>
                     <motion.a
                       href="mailto:contact@novantys.fr"
                       whileHover={{ scale: 1.05 }}
-                      className="flex items-center gap-2 rounded-xl bg-white border border-stroke p-3 shadow-sm transition-all hover:border-primary/50 dark:bg-black dark:border-white/10"
+                      className="flex items-center gap-2 rounded-xl bg-white border border-beigeborder p-3 shadow-sm transition-all hover:border-primary/50"
                     >
                       <Mail className="h-4 w-4 text-primary" />
-                      <span className="text-xs font-bold text-beigetext dark:text-white">Email</span>
+                      <span className="text-xs font-bold !text-black">Email</span>
                     </motion.a>
                   </div>
                 </div>
@@ -200,15 +200,15 @@ const AboutCourtier = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className="group relative overflow-hidden rounded-2xl bg-white border border-stroke p-6 shadow-md transition-all hover:border-primary/50 dark:bg-blacksection dark:border-white/10"
+                  className="group relative overflow-hidden rounded-2xl bg-white border border-beigeborder p-6 shadow-md transition-all hover:border-primary/50"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                   <div className="relative">
                     <stat.icon className="mb-3 h-8 w-8 text-primary" strokeWidth={1.5} />
-                    <p className="mb-1 text-3xl font-bold text-beigetext dark:text-white">
+                    <p className="mb-1 text-3xl font-bold !text-black">
                       {stat.value}
                     </p>
-                    <p className="text-sm font-bold text-beigetextlight dark:text-manatee">
+                    <p className="text-sm font-bold !text-black/60">
                       {stat.label}
                     </p>
                   </div>
@@ -218,7 +218,7 @@ const AboutCourtier = () => {
 
             {/* Values Cards */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-beigetext dark:text-white">
+              <h3 className="text-xl font-bold !text-black">
                 Mes Valeurs
               </h3>
               {values.map((value, index) => (
@@ -228,7 +228,7 @@ const AboutCourtier = () => {
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                   whileHover={{ x: 10 }}
-                  className="group relative overflow-hidden rounded-xl bg-white border border-stroke p-6 shadow-sm transition-all hover:border-primary/50 dark:bg-blacksection dark:border-white/10"
+                  className="group relative overflow-hidden rounded-xl bg-white border border-beigeborder p-6 shadow-sm transition-all hover:border-primary/50"
                 >
                   <div className={`absolute left-0 top-0 h-full w-1 bg-primary`} />
                   <div className="flex items-start gap-4">
@@ -236,10 +236,10 @@ const AboutCourtier = () => {
                       <value.icon className="h-6 w-6 text-primary" strokeWidth={2} />
                     </div>
                     <div className="flex-1">
-                      <h4 className="mb-2 font-bold text-beigetext dark:text-white">
+                      <h4 className="mb-2 font-bold !text-black">
                         {value.title}
                       </h4>
-                      <p className="text-sm text-beigetextlight dark:text-manatee">
+                      <p className="text-sm !text-black/60">
                         {value.description}
                       </p>
                     </div>
@@ -253,11 +253,11 @@ const AboutCourtier = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 1.2 }}
-              className="relative overflow-hidden rounded-2xl bg-beigesection border border-primary/20 p-8 shadow-inner dark:bg-black"
+              className="relative overflow-hidden rounded-2xl bg-beigesection border border-primary/20 p-8 shadow-inner"
             >
               <Sparkles className="absolute right-4 top-4 h-12 w-12 text-primary/10" />
               <blockquote className="relative">
-                <p className="mb-4 text-lg font-bold italic leading-relaxed text-beigetext dark:text-white">
+                <p className="mb-4 text-lg font-bold italic leading-relaxed !text-black">
                   "Mon engagement : vous offrir un service d'excellence avec une approche
                   personnalisée et bienveillante pour protéger ce qui compte vraiment pour vous."
                 </p>
@@ -275,4 +275,3 @@ const AboutCourtier = () => {
 };
 
 export default AboutCourtier;
-

@@ -48,7 +48,7 @@ const Hero = () => {
 
   return (
     <>
-      <section ref={ref} className="relative overflow-hidden pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46">
+      <section ref={ref} className="relative overflow-hidden pb-20 pt-[160px] md:pt-40 xl:pb-25 xl:pt-46">
         {/* Premium Animated Background */}
         <motion.div
           style={{ y }}
@@ -112,14 +112,14 @@ const Hero = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="animate_left md:w-1/2"
+              className="animate_left md:w-1/2 text-center lg:text-left"
             >
               {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="mb-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/20 via-amber-500/10 to-primary/20 px-4 py-2 backdrop-blur-sm ring-1 ring-white/10"
+                className="mb-6 mx-auto lg:mx-0 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/20 via-amber-500/10 to-primary/20 px-4 py-2 backdrop-blur-sm ring-1 ring-white/10"
               >
                 <Sparkles className="h-4 w-4 text-primary" />
                 <span className="text-sm font-medium text-primary">Expertise Premium depuis 1999</span>
@@ -163,7 +163,7 @@ const Hero = () => {
               </motion.p>
 
               {/* Premium Features Pills */}
-              <div className="mb-10 flex flex-wrap gap-3">
+              <div className="mb-10 flex flex-wrap gap-3 justify-center lg:justify-start">
                 {[
                   { icon: Heart, label: "Approche Humaine", color: "from-amber-400 to-primary" },
                   { icon: Shield, label: "100% Sécurisé", color: "from-primary to-amber-500" },
@@ -194,7 +194,7 @@ const Hero = () => {
 
               {/* CTA Buttons */}
               <motion.div
-                className="flex flex-wrap gap-4"
+                className="flex flex-wrap gap-4 justify-center lg:justify-start"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
@@ -232,7 +232,7 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 1.5 }}
-                className="mt-10 flex items-center gap-6 text-sm text-waterloo dark:text-manatee"
+                className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-4 lg:gap-6 text-sm text-waterloo dark:text-manatee"
               >
                 <div className="flex items-center gap-2">
                   <Users className="h-5 w-5 text-primary" />
