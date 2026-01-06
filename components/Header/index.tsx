@@ -82,7 +82,7 @@ const Header = () => {
         {/* Nav Menu Start */}
         <div
           className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${navigationOpen &&
-            "navbar visible! mt-4 h-auto max-h-[85vh] overflow-y-auto rounded-xl bg-white border border-primary/20 p-7.5 shadow-2xl xl:h-auto xl:p-0 xl:border-none xl:shadow-none xl:bg-transparent"
+            "navbar !visible mt-4 h-auto max-h-[85vh] overflow-y-auto rounded-xl !bg-white border border-primary/20 p-7.5 shadow-2xl xl:h-auto xl:p-0 xl:border-none xl:shadow-none xl:bg-transparent"
             }`}
         >
           <nav>
