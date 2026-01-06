@@ -15,9 +15,6 @@ import {
 import Link from "next/link";
 
 const AboutCourtier = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
-
   const stats = [
     { icon: Users, value: "5000+", label: "Clients Accompagnés" },
     { icon: Award, value: "25+", label: "Années d'Expertise" },
@@ -47,7 +44,7 @@ const AboutCourtier = () => {
   ];
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-beigeluxe py-20 lg:py-25 xl:py-30">
+    <section className="relative overflow-hidden bg-beigeluxe py-20 lg:py-25 xl:py-30">
       {/* Decorative Background */}
       <div className="absolute inset-0 -z-1">
         <motion.div
@@ -72,7 +69,8 @@ const AboutCourtier = () => {
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="mx-auto mb-16 text-center"
         >
@@ -96,7 +94,8 @@ const AboutCourtier = () => {
           {/* Left: Image & Profile */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative w-full lg:w-[calc(50%-50px)]"
           >
@@ -187,7 +186,8 @@ const AboutCourtier = () => {
           {/* Right: Values & Stats */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="w-full space-y-8 lg:w-[calc(50%-50px)]"
           >
@@ -197,7 +197,8 @@ const AboutCourtier = () => {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                   whileHover={{ y: -5 }}
                   className="group relative overflow-hidden rounded-2xl bg-white border border-beigeborder p-6 shadow-md transition-all hover:border-primary/50"
@@ -225,7 +226,8 @@ const AboutCourtier = () => {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: 20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                   whileHover={{ x: 10 }}
                   className="group relative overflow-hidden rounded-xl bg-white border border-beigeborder p-6 shadow-sm transition-all hover:border-primary/50"
@@ -251,7 +253,8 @@ const AboutCourtier = () => {
             {/* Testimonial Quote */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 1.2 }}
               className="relative overflow-hidden rounded-2xl bg-beigesection border border-primary/20 p-8 shadow-inner"
             >
