@@ -68,42 +68,21 @@ const Header = () => {
           {/* Hamburger Toggle BTN */}
           <button
             aria-label="hamburger Toggler"
-            className="block rounded-lg border-2 border-primary bg-primary/10 p-2 transition-all hover:bg-primary/20 xl:hidden"
+            className="block rounded-lg border-2 border-primary bg-primary/10 p-2 text-primary transition-all hover:bg-primary/20 xl:hidden"
             onClick={() => setNavigationOpen(!navigationOpen)}
           >
-            <span className="relative block h-6 w-6 cursor-pointer">
-              <span className="absolute right-0 block h-full w-full">
-                <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black dark:bg-white delay-0 duration-200 ease-in-out ${!navigationOpen ? "w-full! delay-300" : "w-0"
-                    }`}
-                ></span>
-                <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black dark:bg-white delay-150 duration-200 ease-in-out ${!navigationOpen ? "delay-400 w-full!" : "w-0"
-                    }`}
-                ></span>
-                <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black dark:bg-white delay-200 duration-200 ease-in-out ${!navigationOpen ? "w-full! delay-500" : "w-0"
-                    }`}
-                ></span>
-              </span>
-              <span className="du-block absolute right-0 h-full w-full rotate-45">
-                <span
-                  className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black dark:bg-white delay-300 duration-200 ease-in-out ${!navigationOpen ? "h-0! delay-0" : "h-full"
-                    }`}
-                ></span>
-                <span
-                  className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black dark:bg-white duration-200 ease-in-out ${!navigationOpen ? "h-0! delay-200" : "h-0.5"
-                    }`}
-                ></span>
-              </span>
-            </span>
+            {navigationOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg>
+            )}
           </button>
         </div>
 
         {/* Nav Menu Start */}
         <div
           className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${navigationOpen &&
-            "navbar visible! mt-4 h-auto max-h-[85vh] overflow-y-auto rounded-md bg-white border border-primary/20 p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:border-none xl:shadow-none xl:bg-transparent"
+            "navbar visible! mt-4 h-auto max-h-[85vh] overflow-y-auto rounded-xl bg-white border border-primary/20 p-7.5 shadow-2xl xl:h-auto xl:p-0 xl:border-none xl:shadow-none xl:bg-transparent"
             }`}
         >
           <nav>
@@ -114,7 +93,7 @@ const Header = () => {
                     <>
                       <button
                         onClick={() => setDropdownToggler(!dropdownToggler)}
-                        className="flex cursor-pointer items-center justify-between gap-3 text-beigetext hover:text-primary dark:text-white"
+                        className={`flex cursor-pointer items-center justify-between gap-3 hover:text-primary ${navigationOpen ? "text-black subpixel-antialiased" : "text-beigetext dark:text-white"}`}
                       >
                         {menuItem.title}
                         <span>
@@ -132,7 +111,7 @@ const Header = () => {
                         className={`dropdown ${dropdownToggler ? "flex" : ""}`}
                       >
                         {menuItem.submenu.map((item, key) => (
-                          <li key={key} className="text-beigetext hover:text-primary dark:text-white">
+                          <li key={key} className={`hover:text-primary ${navigationOpen ? "text-black" : "text-beigetext dark:text-white"}`}>
                             <Link href={item.path || "#"}>{item.title}</Link>
                           </li>
                         ))}
@@ -144,7 +123,7 @@ const Header = () => {
                       className={
                         pathUrl === menuItem.path
                           ? "text-primary hover:text-primary"
-                          : "text-beigetext hover:text-primary dark:text-white"
+                          : `hover:text-primary ${navigationOpen ? "text-black" : "text-beigetext dark:text-white"}`
                       }
                     >
                       {menuItem.title}
@@ -189,6 +168,5 @@ const Header = () => {
     </header>
   );
 };
-
 export default Header;
 
