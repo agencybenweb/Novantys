@@ -102,25 +102,7 @@ const AboutCourtier = () => {
             {/* Main Profile Card */}
             <div className="relative overflow-hidden rounded-3xl bg-white border border-beigeborder p-8 shadow-solid-1 transition-all hover:border-primary/50 hover:shadow-solid-7 xl:p-10">
 
-              {/* Profile Image */}
-              <div className="relative mb-6 overflow-hidden rounded-2xl">
-                <div className="relative aspect-[4/5] overflow-hidden bg-black border border-primary/20">
-                  <Image
-                    src="/assets/images/courtiere_profile_v2.png"
-                    alt="Courtière Novantys Solutions"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority
-                  />
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                </div>
-                {/* Decorative corner */}
-                <div className="absolute right-4 top-4 rounded-full bg-black border border-primary/30 p-3 shadow-lg backdrop-blur-sm">
-                  <Award className="h-6 w-6 text-primary" />
-                </div>
-              </div>
+              {/* Profile Image removed as requested */}
 
               {/* Profile Info */}
               <div className="relative">

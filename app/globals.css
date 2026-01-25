@@ -31,28 +31,28 @@
 @layer utilities {
 
   /* Dropdown converted to pure CSS to avoid @apply syntax issues */
+  /* Dropdown converted to pure CSS to avoid @apply syntax issues */
   .dropdown {
-    position: absolute;
-    left: -1.875rem;
-    margin-top: 0.5rem;
     display: none;
-    min-width: max-content;
     flex-direction: column;
-    gap: 1rem;
-    border-radius: 0.375rem;
-    border: 1px solid rgba(201, 165, 87, 0.3);
-    background-color: #FFFFFF;
-    padding: 1.25rem 2rem;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    gap: 0.5rem;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    width: 100%;
+    /* Mobile styles: static position (accordion), no border/shadow */
+    position: static;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
     transition-duration: 300ms;
     transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   }
 
-  /* Force dark style for dropdown even if theme is light, to match luxury aesthetic */
+  /* Force dark style for dropdown even if theme is light, to match luxury aesthetic logic if needed - keeping consistent */
   :is(.dark .dropdown) {
-    border-color: rgba(201, 165, 87, 0.3);
-    background-color: #0A0A0A;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    /* Mobile: transparent bg usually */
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
   }
 
   @media (min-width: 1280px) {
@@ -60,9 +60,30 @@
       visibility: hidden;
       margin-top: 0;
       display: flex;
+      /* But hidden by opacity/visibility */
+
+      /* Desktop styles: Absolute, styled card */
+      position: absolute;
+      left: -1.875rem;
+      margin-top: 0.5rem;
+      min-width: max-content;
+      gap: 1rem;
+      border-radius: 0.375rem;
+      border: 1px solid rgba(201, 165, 87, 0.3);
+      padding: 1.25rem 2rem;
+
       width: 250px;
       transform: translateY(2.5rem);
       opacity: 0;
+
+      background-color: #FFFFFF;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    :is(.dark .dropdown) {
+      border-color: rgba(201, 165, 87, 0.3);
+      background-color: #0A0A0A;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     }
 
     .group:hover .dropdown {
