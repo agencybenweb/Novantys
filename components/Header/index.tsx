@@ -63,8 +63,8 @@ const Header = () => {
     <>
       <header
         className={`fixed z-99999 transition-all duration-500 ease-in-out ${stickyMenu
-            ? "left-1/2 -translate-x-1/2 top-2 xl:top-6 w-[95%] md:w-[90%] xl:w-[1200px] rounded-full border border-white/20 bg-beigeluxe/80 shadow-lg backdrop-blur-xl dark:bg-black/80 dark:border-white/10"
-            : "left-0 top-0 w-full bg-transparent py-4 text-beigetext shadow-none"
+          ? "left-1/2 -translate-x-1/2 top-2 xl:top-6 w-[95%] md:w-[90%] xl:w-[1200px] rounded-full border border-white/20 bg-beigeluxe/80 shadow-lg backdrop-blur-xl dark:bg-black/80 dark:border-white/10"
+          : "left-0 top-0 w-full bg-transparent py-4 text-beigetext shadow-none"
           } ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-[150%] opacity-0"} ${!stickyMenu && "py-4 md:py-6"
           }`}
       >
@@ -81,7 +81,7 @@ const Header = () => {
                   alt="Novantys Solutions Logo"
                   width={250}
                   height={80}
-                  className="h-auto w-auto max-h-12 xl:max-h-20"
+                  className="h-auto w-auto max-h-16 xl:max-h-20"
                   priority
                 />
               </motion.div>
