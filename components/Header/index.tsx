@@ -4,14 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Shield, Sun, Moon } from "lucide-react";
 import menuData from "./menuData";
 
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
-  const [openSubmenuId, setOpenSubmenuId] = useState<number | null>(null); // Gère quel sous-menu est ouvert
+  const [openSubmenuId, setOpenSubmenuId] = useState<number | null>(null);
   const [stickyMenu, setStickyMenu] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -21,21 +24,33 @@ const Header = () => {
     setMounted(true);
   }, []);
 
-  // Sticky menu
-  const handleStickyMenu = () => {
-    if (window.scrollY >= 80) {
-      setStickyMenu(true);
-    } else {
-      setStickyMenu(false);
-    }
-  };
-
+  // Handle Scroll Logic for Sticky and Visibility
   useEffect(() => {
-    window.addEventListener("scroll", handleStickyMenu);
-    return () => window.removeEventListener("scroll", handleStickyMenu);
-  }, []);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
 
-  // Toggle dropdown logic
+      // Sticky State
+      if (currentScrollY >= 80) {
+        setStickyMenu(true);
+      } else {
+        setStickyMenu(false);
+      }
+
+      // Visibility State (Hide on scroll down, Show on scroll up)
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        setIsVisible(false); // Scrolling down
+      } else {
+        setIsVisible(true); // Scrolling up
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+  // Toggle dropdown
   const handleSubmenuToggle = (id: number) => {
     setOpenSubmenuId(openSubmenuId === id ? null : id);
   };
@@ -47,12 +62,13 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed left-0 top-0 z-99999 w-full transition-all duration-300 ${stickyMenu
-          ? "bg-beigeluxe/90 py-4 shadow-solid-5 backdrop-blur-xl border-b border-primary/20 dark:bg-black/90"
-          : "py-4 bg-beigeluxe/95 backdrop-blur-md border-b border-primary/10 shadow-sm dark:bg-black/95 dark:border-strokedark/20 xl:py-7 xl:bg-transparent xl:dark:bg-transparent xl:border-none xl:shadow-none"
+        className={`fixed z-99999 transition-all duration-500 ease-in-out ${stickyMenu
+            ? "left-1/2 -translate-x-1/2 top-6 w-[95%] md:w-[90%] xl:w-[1200px] rounded-full border border-white/20 bg-beigeluxe/80 shadow-lg backdrop-blur-xl dark:bg-black/80 dark:border-white/10"
+            : "left-0 top-0 w-full bg-transparent py-4 text-beigetext shadow-none"
+          } ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-[150%] opacity-0"} ${!stickyMenu && "py-4 md:py-6"
           }`}
       >
-        <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
+        <div className={`relative mx-auto items-center justify-between px-4 md:px-8 xl:flex 2xl:px-8 ${stickyMenu ? "py-2" : ""}`}>
           <div className="flex w-full items-center justify-between xl:w-1/4">
             <Link href="/">
               <motion.div
@@ -63,9 +79,9 @@ const Header = () => {
                 <Image
                   src="/assets/images/logo-dor-removebg-preview.png"
                   alt="Novantys Solutions Logo"
-                  width={250}
-                  height={80}
-                  className="h-auto w-auto max-h-20"
+                  width={220}
+                  height={70}
+                  className="h-auto w-auto max-h-16"
                   priority
                 />
               </motion.div>
@@ -74,7 +90,7 @@ const Header = () => {
             {/* Hamburger Toggle BTN */}
             <button
               aria-label="hamburger Toggler"
-              className="block rounded-lg border-2 border-primary bg-primary/10 p-2 text-primary transition-all hover:bg-primary/20 xl:hidden"
+              className="block rounded-full border border-primary/20 bg-beigeluxe/50 p-2 text-primary transition-all hover:bg-primary/10 xl:hidden"
               onClick={() => setNavigationOpen(!navigationOpen)}
             >
               {navigationOpen ? (
@@ -88,23 +104,23 @@ const Header = () => {
           {/* Nav Menu Start */}
           <div
             className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${navigationOpen &&
-              "navbar !visible mt-4 h-auto max-h-[85vh] overflow-y-auto rounded-xl !bg-white border border-primary/20 p-7.5 shadow-2xl xl:h-auto xl:p-0 xl:border-none xl:shadow-none xl:bg-transparent"
+              "navbar !visible mt-4 h-auto max-h-[85vh] overflow-y-auto rounded-3xl bg-white/95 backdrop-blur-md border border-primary/10 p-7.5 shadow-2xl xl:h-auto xl:p-0 xl:border-none xl:shadow-none xl:bg-transparent"
               }`}
           >
             <nav>
-              <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
+              <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-8">
                 {menuData.map((menuItem, key) => (
                   <li key={key} className={menuItem.submenu && "group relative"}>
                     {menuItem.submenu ? (
                       <>
                         <button
                           onClick={() => handleSubmenuToggle(menuItem.id)}
-                          className={`flex cursor-pointer items-center justify-between gap-3 hover:text-primary ${navigationOpen ? "text-black subpixel-antialiased font-medium" : "text-beigetext font-medium xl:text-beigetext dark:text-white"}`}
+                          className={`flex cursor-pointer items-center justify-between gap-2 hover:text-primary ${navigationOpen ? "text-black font-medium" : "text-beigetext font-medium xl:text-beigetext dark:text-white"}`}
                         >
                           {menuItem.title}
                           <span>
                             <svg
-                              className={`h-3 w-3 cursor-pointer fill-waterloo group-hover:fill-primary transition-transform ${openSubmenuId === menuItem.id ? "rotate-180" : ""}`}
+                              className={`h-3 w-3 cursor-pointer fill-current group-hover:fill-primary transition-transform ${openSubmenuId === menuItem.id ? "rotate-180" : ""}`}
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 512 512"
                             >
@@ -165,7 +181,7 @@ const Header = () => {
               >
                 <Link
                   href="/contact"
-                  className="group relative overflow-hidden rounded-full bg-gradient-to-r from-primary to-amber-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl"
+                  className="group relative overflow-hidden rounded-full bg-gradient-to-r from-primary to-amber-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl"
                 >
                   <span className="relative z-10">Obtenir un Devis</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-primary opacity-0 transition-opacity group-hover:opacity-100" />
@@ -175,8 +191,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      {/* Spacer to prevent content overlap on mobile */}
-      <div className="h-24 xl:hidden" />
+      {/* Spacer removed as the hero padding is now managed dynamically, or add back if needed but smaller */}
     </>
   );
 };
