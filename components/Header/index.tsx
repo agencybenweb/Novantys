@@ -114,7 +114,7 @@ const Header = () => {
                         </button>
 
                         <ul
-                          className={`dropdown ${openSubmenuId === menuItem.id ? "flex" : ""}`}
+                          className={`dropdown ${openSubmenuId === menuItem.id ? "flex" : "hidden xl:flex"}`}
                         >
                           {menuItem.submenu.map((item, key) => (
                             <li key={key} className={`hover:text-primary ${navigationOpen ? "text-black/80" : "text-beigetext dark:text-white"}`}>
