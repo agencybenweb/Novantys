@@ -63,9 +63,9 @@ const Header = () => {
                 <Image
                   src="/assets/images/logo-dor-removebg-preview.png"
                   alt="Novantys Solutions Logo"
-                  width={180}
-                  height={60}
-                  className="h-auto w-auto max-h-14"
+                  width={250}
+                  height={80}
+                  className="h-auto w-auto max-h-20"
                   priority
                 />
               </motion.div>

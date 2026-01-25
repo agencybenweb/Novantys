@@ -63,12 +63,7 @@ const menuData: Menu[] = [
       },
     ],
   },
-  {
-    id: 5,
-    title: "EMPRUNTIS",
-    path: "/partenaire-empruntis",
-    newTab: false,
-  },
+
   {
     id: 6,
     title: "Contact",
