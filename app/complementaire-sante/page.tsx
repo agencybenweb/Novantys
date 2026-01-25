@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import toast, { Toaster } from "react-hot-toast";
 import {
   Shield,
   Eye,
@@ -22,6 +23,7 @@ import {
 } from "lucide-react";
 
 export default function ComplementaireSante() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     // Assuré Principal
     civilite: '',
@@ -148,13 +150,37 @@ export default function ComplementaireSante() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Votre demande de devis complémentaire santé a été envoyée ! Un conseiller vous contactera dans les plus brefs délais.');
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/devis-sante", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success("Votre demande de devis a bien été envoyée !");
+        // Reset form or redirect
+      } else {
+        toast.error(result.error || "Une erreur est survenue.");
+      }
+    } catch (error) {
+      toast.error("Erreur de connexion. Veuillez réessayer.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-black via-blacksection to-black">
+      <Toaster position="bottom-right" />
       {/* Decorative Background */}
       <div className="absolute inset-0 -z-1">
         <motion.div
@@ -763,12 +789,22 @@ export default function ComplementaireSante() {
 
                   <motion.button
                     type="submit"
+                    disabled={isSubmitting}
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary via-amber-500 to-primary bg-size-200 px-12 py-5 text-lg font-bold text-white shadow-xl transition-all hover:shadow-2xl"
+                    className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary via-amber-500 to-primary bg-size-200 px-12 py-5 text-lg font-bold text-white shadow-xl transition-all hover:shadow-2xl disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    <Send className="h-6 w-6" />
-                    <span>Envoyer Ma Demande</span>
+                    {isSubmitting ? (
+                      <>
+                        <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                        <span>Envoi en cours...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-6 w-6" />
+                        <span>Envoyer Ma Demande</span>
+                      </>
+                    )}
                   </motion.button>
 
                   <p className="mt-6 text-xs text-manatee">
