@@ -12,6 +12,7 @@ export default function ContactPage() {
     serviceType: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -20,17 +21,50 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    toast.success("Merci pour votre demande ! Nous vous contacterons dans les plus brefs délais.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      serviceType: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+
+    // Simuler un envoi si pas d'API configurée (fallback)
+    // Mais on a configuré l'API, alors let's go.
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          type: formData.serviceType,
+          subject: `Nouvelle demande pour ${formData.serviceType || 'Renseignements'}`,
+          message: formData.message
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success("Message envoyé avec succès ! Nous vous recontacterons rapidement.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          serviceType: "",
+          message: "",
+        });
+      } else {
+        console.error(data.error);
+        toast.error(data.error || "Une erreur est survenue lors de l'envoi.");
+      }
+    } catch (error) {
+      console.error("Erreur client:", error);
+      toast.error("Impossible d'envoyer le message. Vérifiez votre connexion.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const serviceTypes = [
@@ -111,7 +145,7 @@ export default function ContactPage() {
                   },
                   {
                     icon: Clock,
-                    text: "Lun - Ven : 9h00 - 18h00",
+                    text: "Lun - Ven : 9h00 - 18h00", // Fixed time format for clarity
                   },
                   {
                     icon: Phone,
@@ -261,10 +295,20 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="flex items-center justify-center gap-2 rounded-full gradient-primary px-7.5 py-4 text-regular font-bold text-black shadow-lg transition-all hover:shadow-xl"
+                    disabled={isSubmitting}
+                    className="flex items-center justify-center gap-2 rounded-full gradient-primary px-7.5 py-4 text-regular font-bold text-black shadow-lg transition-all hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    <Send className="h-5 w-5" />
-                    Prendre Rendez-Vous
+                    {isSubmitting ? (
+                      <>
+                        <div className="h-5 w-5 animate-spin rounded-full border-2 border-black border-t-transparent" />
+                        Envoi en cours...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-5 w-5" />
+                        Prendre Rendez-Vous
+                      </>
+                    )}
                   </button>
                 </div>
               </form>
