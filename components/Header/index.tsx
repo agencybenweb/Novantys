@@ -63,7 +63,7 @@ const Header = () => {
     <>
       <header
         className={`fixed z-99999 transition-all duration-500 ease-in-out ${stickyMenu
-            ? "left-1/2 -translate-x-1/2 top-6 w-[95%] md:w-[90%] xl:w-[1200px] rounded-full border border-white/20 bg-beigeluxe/80 shadow-lg backdrop-blur-xl dark:bg-black/80 dark:border-white/10"
+            ? "left-1/2 -translate-x-1/2 top-2 xl:top-6 w-[95%] md:w-[90%] xl:w-[1200px] rounded-full border border-white/20 bg-beigeluxe/80 shadow-lg backdrop-blur-xl dark:bg-black/80 dark:border-white/10"
             : "left-0 top-0 w-full bg-transparent py-4 text-beigetext shadow-none"
           } ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-[150%] opacity-0"} ${!stickyMenu && "py-4 md:py-6"
           }`}
@@ -79,9 +79,9 @@ const Header = () => {
                 <Image
                   src="/assets/images/logo-dor-removebg-preview.png"
                   alt="Novantys Solutions Logo"
-                  width={220}
-                  height={70}
-                  className="h-auto w-auto max-h-16"
+                  width={250}
+                  height={80}
+                  className="h-auto w-auto max-h-12 xl:max-h-20"
                   priority
                 />
               </motion.div>
@@ -104,11 +104,11 @@ const Header = () => {
           {/* Nav Menu Start */}
           <div
             className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${navigationOpen &&
-              "navbar !visible mt-4 h-auto max-h-[85vh] overflow-y-auto rounded-3xl bg-white/95 backdrop-blur-md border border-primary/10 p-7.5 shadow-2xl xl:h-auto xl:p-0 xl:border-none xl:shadow-none xl:bg-transparent"
+              "navbar !visible mt-2 h-auto max-h-[85vh] overflow-y-auto rounded-3xl bg-white/95 backdrop-blur-md border border-primary/10 p-5 shadow-2xl xl:h-auto xl:p-0 xl:border-none xl:shadow-none xl:bg-transparent"
               }`}
           >
             <nav>
-              <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-8">
+              <ul className="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-8">
                 {menuData.map((menuItem, key) => (
                   <li key={key} className={menuItem.submenu && "group relative"}>
                     {menuItem.submenu ? (
@@ -159,7 +159,7 @@ const Header = () => {
               </ul>
             </nav>
 
-            <div className="mt-7 flex items-center gap-4 xl:mt-0">
+            <div className="mt-5 flex items-center gap-4 xl:mt-0">
               {/* Premium Theme Toggler */}
               <motion.button
                 aria-label="theme toggler"
@@ -191,7 +191,8 @@ const Header = () => {
           </div>
         </div>
       </header>
-      {/* Spacer removed as the hero padding is now managed dynamically, or add back if needed but smaller */}
+      {/* Spacer to prevent content overlap on mobile - Restored and adjusted */}
+      <div className="h-24 xl:hidden" />
     </>
   );
 };
