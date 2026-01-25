@@ -48,7 +48,7 @@ const Hero = () => {
 
   return (
     <>
-      <section ref={ref} className="relative overflow-hidden pb-20 pt-24 md:pt-40 xl:pb-25 xl:pt-46">
+      <section ref={ref} className="relative overflow-hidden pb-20 pt-4 md:pt-40 xl:pb-25 xl:pt-46">
         {/* Premium Animated Background */}
         <motion.div
           style={{ y }}
